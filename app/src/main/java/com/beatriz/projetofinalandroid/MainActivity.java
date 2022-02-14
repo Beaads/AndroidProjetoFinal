@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         RadioButton OK;
         RadioButton NOK;
 
-            OK = findViewById(R.id.OK);
-            NOK = findViewById(R.id.NOK);
+            OK = findViewById(R.id.PrimeiroOK);
+            NOK = findViewById(R.id.PrimeiroNOK);
     }
 }
