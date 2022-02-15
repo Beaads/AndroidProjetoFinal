@@ -118,24 +118,34 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
-        <EditText
+
+        <RadioGroup
             android:id="@+id/saidaretorno"
             android:layout_width="200dp"
             android:layout_height="37dp"
             android:layout_marginStart="160dp"
             android:layout_marginTop="199dp"
-            android:ems="20"
-            android:hint="SAÍDA/RETORNO"
-            android:inputType="textPersonName"
-            android:textColor="@color/black"
-            android:textColorHighlight="@color/black"
-            android:textSize="12sp"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.0" >
+
+            <RadioButton
+                android:id="@+id/saida"
+                android:layout_width="99dp"
+                android:layout_height="37dp"
+                android:text="Saída" />
+
+            <RadioButton
+                android:id="@+id/retorno"
+                android:layout_width="99dp"
+                android:layout_height="37dp"
+                android:text="Retorno" />
+        </RadioGroup>
+
 
         <EditText
             android:id="@+id/motorista"
@@ -174,33 +184,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
-        <RadioGroup
-            android:id="@+id/PrimeiroOKNOK"
-            android:layout_width="172dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="160dp"
-            android:layout_marginTop="730dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0">
 
-            <RadioButton
-                android:id="@+id/PrimeiroOK"
-                android:layout_width="67dp"
-                android:layout_height="match_parent"
-                android:text="OK" />
-
-            <RadioButton
-                android:id="@+id/PrimeiroNOK"
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:text="NOK" />
-
-        </RadioGroup>
 
         <TextView
             android:id="@+id/pneusdoveiculo"
@@ -226,8 +210,9 @@
             android:id="@+id/tracao"
             android:layout_width="111dp"
             android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="75dp"
             android:layout_marginTop="310dp"
+            android:gravity="center_vertical"
             android:text="Tracao: "
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
             android:textSize="16sp"
@@ -239,12 +224,29 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0" />
 
+        <ImageView
+            android:id="@+id/imagemTracao"
+            android:layout_width="60dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="310dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="@drawable/tracao" />
+
+
         <TextView
             android:id="@+id/rodoar"
             android:layout_width="111dp"
             android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="75dp"
             android:layout_marginTop="370dp"
+            android:gravity="center_vertical"
             android:text="Rodoar:"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
             android:textSize="16sp"
@@ -255,12 +257,28 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
+        <ImageView
+            android:id="@+id/imagemRodoar"
+            android:layout_width="60dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="370dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="@drawable/rodoar" />
+
         <TextView
             android:id="@+id/calibragempneus"
             android:layout_width="111dp"
             android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="75dp"
             android:layout_marginTop="430dp"
+            android:gravity="center_vertical"
             android:text="Calibragem de pneus: "
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
             android:textSize="16sp"
@@ -271,12 +289,28 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
+        <ImageView
+            android:id="@+id/imagemCalibragemPneus"
+            android:layout_width="60dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="430dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="@drawable/calibragem_de_pneu" />
+
         <TextView
             android:id="@+id/estepe"
             android:layout_width="111dp"
             android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="75dp"
             android:layout_marginTop="490dp"
+            android:gravity="center_vertical"
             android:text="Estepe:"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
             android:textSize="16sp"
@@ -286,6 +320,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0" />
+
+        <ImageView
+            android:id="@+id/imagemEstepe"
+            android:layout_width="60dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="490dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="@drawable/estepe" />
 
         <TextView
             android:id="@+id/freiosesuspensao"
@@ -311,9 +360,10 @@
             android:id="@+id/FreioDianteiro"
             android:layout_width="111dp"
             android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="75dp"
             android:layout_marginTop="610dp"
             android:text="Freio Dianteiro:"
+            android:gravity="center_vertical"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -323,13 +373,29 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
+        <ImageView
+            android:id="@+id/imagemFreioDianteiro"
+            android:layout_width="60dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="610dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="@drawable/freiodianteiro" />
+
         <TextView
             android:id="@+id/FreioTraseiro"
             android:layout_width="111dp"
             android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="75dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="670dp"
+            android:gravity="center_vertical"
             android:text="Freio Traseiro:"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
             android:textSize="16sp"
@@ -342,13 +408,30 @@
             app:layout_constraintVertical_bias="0.0" />
 
 
+        <ImageView
+            android:id="@+id/imagemFreioTraseiro"
+            android:layout_width="60dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="670dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="@drawable/freiotraseiro" />
+
+
         <TextView
             android:id="@+id/amortecedor"
             android:layout_width="111dp"
             android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="75dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="730dp"
+            android:gravity="center_vertical"
             android:text="Amortecedor:"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
             android:textSize="16sp"
@@ -360,13 +443,31 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0" />
 
+
+        <ImageView
+            android:id="@+id/imagemAmortecedor"
+            android:layout_width="60dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="730dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="@drawable/amortecedor" />
+
+
         <TextView
             android:id="@+id/molas"
             android:layout_width="111dp"
             android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="75dp"
             android:layout_marginTop="790dp"
             android:text="Molas:"
+            android:gravity="center_vertical"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -375,15 +476,31 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0" />
+            app:layout_constraintVertical_bias="0"
+
+            />
+
+        <ImageView
+            android:id="@+id/imagemMola"
+            android:layout_width="60dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="790dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="@drawable/mola" />
 
         <TextView
             android:id="@+id/motor"
-            android:layout_width="111dp"
+            android:layout_width="90dp"
             android:layout_height="43dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="850dp"
-            android:layout_marginBottom="80dp"
             android:background="@android:color/black"
             android:paddingLeft="15dp"
             android:paddingTop="5dp"
@@ -399,13 +516,276 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
+        <TextView
+            android:id="@+id/cambiooleo"
+            android:layout_width="111dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginBottom="80dp"
+            android:layout_marginTop="910dp"
+            android:text="Câmbio de óleo:"
+            android:gravity="center_vertical"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/direcaoOleo"
+            android:layout_width="111dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="75dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="970dp"
+            android:text="Direção óleo:"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/limpezaRadiadorAgua"
+            android:layout_width="111dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="1030dp"
+            android:text="Limpeza Radiador Água:"
+            android:gravity="center_vertical"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/oleoMotor"
+            android:layout_width="111dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="1090dp"
+            android:gravity="center_vertical"
+            android:text="Óleo do motor:"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/parteExterna"
+            android:layout_width="158dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="1150dp"
+            android:background="@android:color/black"
+            android:paddingLeft="15dp"
+            android:paddingTop="5dp"
+            android:text="Parte Externa:"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/retrovisor"
+            android:layout_width="111dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="75dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="1210dp"
+            android:text="Retrovisor:"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/parabrisa"
+            android:layout_width="111dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="1270dp"
+            android:text="Para-brisa:"
+            android:gravity="center_vertical"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+
+        <TextView
+            android:id="@+id/paraChoqueDianteiro"
+            android:layout_width="111dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="1330dp"
+            android:text="Para-choque Dianteiro:"
+            android:gravity="center_vertical"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+
+        <TextView
+            android:id="@+id/paraChoqueTraseiro"
+            android:layout_width="111dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="1390dp"
+            android:text="Para-choque Traseiro:"
+            android:gravity="center_vertical"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/parteInterna"
+            android:layout_width="158dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="1450dp"
+            android:background="@android:color/black"
+            android:paddingLeft="15dp"
+            android:paddingTop="5dp"
+            android:text="Parte Interna:"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/estofamento"
+            android:layout_width="111dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="1510dp"
+            android:text="Estofamento:"
+            android:gravity="center_vertical"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/cortinas"
+            android:layout_width="111dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="1570dp"
+            android:text="Cortinas:"
+            android:gravity="center_vertical"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/cintoDeSeguranca"
+            android:layout_width="111dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="1630dp"
+            android:text="Cinto de Segurança:"
+            android:gravity="center_vertical"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/freioDeEstacionamento"
+            android:layout_width="111dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="1690dp"
+            android:layout_marginBottom="90dp"
+            android:text="Freio de Estacionamento:"
+            android:gravity="center_vertical"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+
 
         <RadioGroup
-            android:id="@+id/PrimeiroOKNOK"
+            android:id="@+id/TracaoOKNOK"
             android:layout_width="172dp"
             android:layout_height="43dp"
-            android:layout_marginStart="160dp"
-            android:layout_marginTop="490dp"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="310dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -415,52 +795,25 @@
             app:layout_constraintVertical_bias="0">
 
             <RadioButton
-                android:id="@+id/PrimeiroOK"
+                android:id="@+id/TracaoOK"
                 android:layout_width="67dp"
                 android:layout_height="match_parent"
                 android:text="OK" />
 
             <RadioButton
-                android:id="@+id/PrimeiroNOK"
+                android:id="@+id/TracaoNOK"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
         </RadioGroup>
 
-        <RadioGroup
-            android:id="@+id/PrimeiroOKNOK"
-            android:layout_width="172dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="160dp"
-            android:layout_marginTop="430dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0">
-
-            <RadioButton
-                android:id="@+id/PrimeiroOK"
-                android:layout_width="67dp"
-                android:layout_height="match_parent"
-                android:text="OK" />
-
-            <RadioButton
-                android:id="@+id/PrimeiroNOK"
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:text="NOK" />
-
-        </RadioGroup>
 
         <RadioGroup
-            android:id="@+id/PrimeiroOKNOK"
+            android:id="@+id/RodoarOKNOK"
             android:layout_width="172dp"
             android:layout_height="43dp"
-            android:layout_marginStart="160dp"
+            android:layout_marginStart="190dp"
             android:layout_marginTop="370dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -471,18 +824,77 @@
             app:layout_constraintVertical_bias="0">
 
             <RadioButton
-                android:id="@+id/PrimeiroOK"
+                android:id="@+id/RodoarOK"
                 android:layout_width="67dp"
                 android:layout_height="match_parent"
                 android:text="OK" />
 
             <RadioButton
-                android:id="@+id/PrimeiroNOK"
+                android:id="@+id/RodoarNOK"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="NOK" />
+
+
+        </RadioGroup>
+
+
+        <RadioGroup
+            android:id="@+id/CalibragemPneusOKNOK"
+            android:layout_width="172dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="430dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
+
+            <RadioButton
+                android:id="@+id/CalibragemPneusOK"
+                android:layout_width="67dp"
+                android:layout_height="match_parent"
+                android:text="OK" />
+
+            <RadioButton
+                android:id="@+id/CalibragemPneusNOK"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
         </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/EstepeOKNOK"
+            android:layout_width="172dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="490dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
+
+            <RadioButton
+                android:id="@+id/EstepeOK"
+                android:layout_width="67dp"
+                android:layout_height="match_parent"
+                android:text="OK" />
+
+            <RadioButton
+                android:id="@+id/EstepeNOK"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="NOK" />
+
+        </RadioGroup>
+
 
 
         <Button
@@ -498,39 +910,12 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <RadioGroup
-            android:id="@+id/PrimeiroOKNOK"
-            android:layout_width="172dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="160dp"
-            android:layout_marginTop="310dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0">
-
-            <RadioButton
-                android:id="@+id/PrimeiroOK"
-                android:layout_width="67dp"
-                android:layout_height="match_parent"
-                android:text="OK" />
-
-            <RadioButton
-                android:id="@+id/PrimeiroNOK"
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:text="NOK" />
-
-        </RadioGroup>
 
         <RadioGroup
-            android:id="@+id/PrimeiroOKNOK"
+            android:id="@+id/FreioDianteiroOKNOK"
             android:layout_width="172dp"
             android:layout_height="43dp"
-            android:layout_marginStart="160dp"
+            android:layout_marginStart="190dp"
             android:layout_marginTop="610dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -541,13 +926,13 @@
             app:layout_constraintVertical_bias="0.0">
 
             <RadioButton
-                android:id="@+id/PrimeiroOK"
+                android:id="@+id/FreioDianteiroOK"
                 android:layout_width="67dp"
                 android:layout_height="match_parent"
                 android:text="OK" />
 
             <RadioButton
-                android:id="@+id/PrimeiroNOK"
+                android:id="@+id/FreioDianteiroNOK"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
@@ -555,54 +940,10 @@
         </RadioGroup>
 
         <RadioGroup
-            android:id="@+id/PrimeiroOKNOK"
-            android:layout_width="172dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="160dp"
-            android:layout_marginTop="790dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0">
-
-            <RadioGroup
-                android:id="@+id/PrimeiroOKNOK"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/freiosesuspensao"
-                app:layout_constraintVertical_bias="0">
-
-                <RadioButton
-                    android:id="@+id/PrimeiroOK"
-                    android:layout_width="67dp"
-                    android:layout_height="match_parent"
-                    android:text="OK"
-                    tools:ignore="DuplicateIds" />
-
-                <RadioButton
-                    android:id="@+id/PrimeiroNOK"
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:text="NOK"
-                    tools:ignore="DuplicateIds" />
-
-            </RadioGroup>
-
-        </RadioGroup>
-
-        <RadioGroup
-            android:id="@+id/PrimeiroOKNOK"
+            android:id="@+id/FreioTraseiroOKNOK"
             android:layout_width="176dp"
             android:layout_height="45dp"
-            android:layout_marginStart="160dp"
+            android:layout_marginStart="190dp"
             android:layout_marginTop="670dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -614,13 +955,411 @@
             tools:ignore="DuplicateIds">
 
             <RadioButton
-                android:id="@+id/PrimeiroOK"
+                android:id="@+id/FreioTraseiroOK"
                 android:layout_width="67dp"
                 android:layout_height="match_parent"
                 android:text="OK" />
 
             <RadioButton
-                android:id="@+id/PrimeiroNOK"
+                android:id="@+id/FreioTraseiroNOK"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="NOK" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/AmortecedorOKNOK"
+            android:layout_width="172dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="730dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
+
+            <RadioButton
+                android:id="@+id/AmortcedorOK"
+                android:layout_width="67dp"
+                android:layout_height="match_parent"
+                android:text="OK" />
+
+            <RadioButton
+                android:id="@+id/AmortecedorNOK"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="NOK" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/MolasOKNOK"
+            android:layout_width="172dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="790dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
+
+                <RadioButton
+                    android:id="@+id/MolasOK"
+                    android:layout_width="67dp"
+                    android:layout_height="match_parent"
+                    android:text="OK"
+                    tools:ignore="DuplicateIds" />
+
+                <RadioButton
+                    android:id="@+id/MolasNOK"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="NOK"
+                    tools:ignore="DuplicateIds" />
+
+            </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/CambioOleoOKNOK"
+            android:layout_width="172dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="910dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
+
+            <RadioButton
+                android:id="@+id/CambioOleoOK"
+                android:layout_width="67dp"
+                android:layout_height="match_parent"
+                android:text="OK"
+                tools:ignore="DuplicateIds" />
+
+            <RadioButton
+                android:id="@+id/CambioOleoNOK"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="NOK"
+                tools:ignore="DuplicateIds" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/DirecaoOleoOKNOK"
+            android:layout_width="172dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="970dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
+
+            <RadioButton
+                android:id="@+id/DirecaoOleoOK"
+                android:layout_width="67dp"
+                android:layout_height="match_parent"
+                android:text="OK"
+                tools:ignore="DuplicateIds" />
+
+            <RadioButton
+                android:id="@+id/DirecaoOleoNOK"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="NOK"
+                tools:ignore="DuplicateIds" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/LimpezaRadiadorAguaOKNOK"
+            android:layout_width="172dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="1030dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
+
+            <RadioButton
+                android:id="@+id/LimpezaRadiadorAguaOK"
+                android:layout_width="67dp"
+                android:layout_height="match_parent"
+                android:text="OK" />
+
+            <RadioButton
+                android:id="@+id/LimpezaRadiadorAguaNOK"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="NOK" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/OleoMotorOKNOK"
+            android:layout_width="172dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="1090dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
+
+            <RadioButton
+                android:id="@+id/OleoMotorOK"
+                android:layout_width="67dp"
+                android:layout_height="match_parent"
+                android:text="OK" />
+
+            <RadioButton
+                android:id="@+id/OleoMotorNOK"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="NOK" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/RetrovisorOKNOK"
+            android:layout_width="172dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="1210dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
+
+            <RadioButton
+                android:id="@+id/RetrovisorOK"
+                android:layout_width="67dp"
+                android:layout_height="match_parent"
+                android:text="OK" />
+
+            <RadioButton
+                android:id="@+id/RetrovisorNOK"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="NOK" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/paraBrisaOKNOK"
+            android:layout_width="172dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="1270dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
+
+            <RadioButton
+                android:id="@+id/paraBrisaOK"
+                android:layout_width="67dp"
+                android:layout_height="match_parent"
+                android:text="OK" />
+
+            <RadioButton
+                android:id="@+id/paraBrisaNOK"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="NOK" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/paraChoqueDianteiroOKNOK"
+            android:layout_width="172dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="1330dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
+
+            <RadioButton
+                android:id="@+id/paraChoqueDianteiroOK"
+                android:layout_width="67dp"
+                android:layout_height="match_parent"
+                android:text="OK" />
+
+            <RadioButton
+                android:id="@+id/paraChoqueDianteiroNOK"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="NOK" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/paraChoqueTraseiroOKNOK"
+            android:layout_width="172dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="1390dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
+
+            <RadioButton
+                android:id="@+id/paraChoqueTraseiroOK"
+                android:layout_width="67dp"
+                android:layout_height="match_parent"
+                android:text="OK" />
+
+            <RadioButton
+                android:id="@+id/paraChoqueTraseiroNOK"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="NOK" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/estofamentoOKNOK"
+            android:layout_width="172dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="1510dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
+
+            <RadioButton
+                android:id="@+id/estofamentoOK"
+                android:layout_width="67dp"
+                android:layout_height="match_parent"
+                android:text="OK" />
+
+            <RadioButton
+                android:id="@+id/estofamentoNOK"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="NOK" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/cortinasOKNOK"
+            android:layout_width="172dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="1570dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
+
+            <RadioButton
+                android:id="@+id/cortinasOK"
+                android:layout_width="67dp"
+                android:layout_height="match_parent"
+                android:text="OK" />
+
+            <RadioButton
+                android:id="@+id/cortinasNOK"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="NOK" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/cintoDeSegurancaOKNOK"
+            android:layout_width="172dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="1630dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
+
+            <RadioButton
+                android:id="@+id/cintoDeSegurancaOK"
+                android:layout_width="67dp"
+                android:layout_height="match_parent"
+                android:text="OK" />
+
+            <RadioButton
+                android:id="@+id/cintoDeSegurancaNOK"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="NOK" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/freioDeEstacionamentoOKNOK"
+            android:layout_width="172dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="1690dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
+
+            <RadioButton
+                android:id="@+id/freioDeEstacionamentoOK"
+                android:layout_width="67dp"
+                android:layout_height="match_parent"
+                android:text="OK" />
+
+            <RadioButton
+                android:id="@+id/freioDeEstacionamentoNOK"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
@@ -629,5 +1368,3 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
-
-
