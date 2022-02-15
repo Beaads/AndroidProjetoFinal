@@ -17,6 +17,6 @@ public interface CheckListService {
     Observable<List<CheckList>> getChecklists();
 
     @POST("checklists/")
-    Observable<CheckList> adiciona(@Body CheckList checkList);
+    Observable<CheckList> salva(@Body CheckList checkList);
 
 }

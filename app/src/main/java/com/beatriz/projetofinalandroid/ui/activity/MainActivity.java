@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         CheckList checkListCriado = criaCheckList();
-        Observable<CheckList> observable = (Observable<CheckList>) restClient.getRetrofit().create(CheckListService.class).adiciona(checkListCriado);
+        Observable<CheckList> observable = (Observable<CheckList>) restClient.getRetrofit().create(CheckListService.class).salva(checkListCriado);
         observable
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
