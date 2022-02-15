@@ -100,7 +100,7 @@
 
 
         <EditText
-            android:id="@+id/hora2"
+            android:id="@+id/hora"
             android:layout_width="140dp"
             android:layout_height="34dp"
             android:layout_marginStart="10dp"
@@ -213,7 +213,7 @@
             android:layout_marginStart="75dp"
             android:layout_marginTop="310dp"
             android:gravity="center_vertical"
-            android:text="Tracao: "
+            android:text="Tração: "
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -535,6 +535,21 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0" />
 
+        <ImageView
+            android:id="@+id/imagemCambioOleo"
+            android:layout_width="60dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="910dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="@drawable/cambiooleo" />
+
         <TextView
             android:id="@+id/direcaoOleo"
             android:layout_width="111dp"
@@ -552,6 +567,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0" />
+
+        <ImageView
+            android:id="@+id/imagemDirecaoOleo"
+            android:layout_width="60dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="970dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="@drawable/direcaooleo" />
 
         <TextView
             android:id="@+id/limpezaRadiadorAgua"
@@ -571,6 +601,22 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0" />
 
+
+        <ImageView
+            android:id="@+id/imagemLimpezaRadiadorAgua"
+            android:layout_width="60dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="1030dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="@drawable/limpezaradiadoragua" />
+
         <TextView
             android:id="@+id/oleoMotor"
             android:layout_width="111dp"
@@ -588,6 +634,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0" />
+
+        <ImageView
+            android:id="@+id/imagemOleoMotor"
+            android:layout_width="60dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="1090dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="@drawable/oleomotor" />
 
         <TextView
             android:id="@+id/parteExterna"
@@ -628,6 +689,21 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0" />
 
+        <ImageView
+            android:id="@+id/imagemRetrovisor"
+            android:layout_width="60dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="1210dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="@drawable/retrovisor" />
+
         <TextView
             android:id="@+id/parabrisa"
             android:layout_width="111dp"
@@ -645,6 +721,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0" />
+
+        <ImageView
+            android:id="@+id/imagemParabrisa"
+            android:layout_width="60dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="1270dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="@drawable/parabrisa" />
+
 
 
         <TextView
@@ -665,6 +757,21 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0" />
 
+        <ImageView
+            android:id="@+id/imagemParaChoqueDianteiro"
+            android:layout_width="60dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="1330dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="@drawable/parachoquedianteiro" />
+
 
         <TextView
             android:id="@+id/paraChoqueTraseiro"
@@ -683,6 +790,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0" />
+
+
+        <ImageView
+            android:id="@+id/imagemParaChoqueTraseiro"
+            android:layout_width="60dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="1390dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="@drawable/parachoquetraseiro" />
+
 
         <TextView
             android:id="@+id/parteInterna"
@@ -723,6 +847,21 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0" />
 
+        <ImageView
+            android:id="@+id/imagemEstofamento"
+            android:layout_width="60dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="1510dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="@drawable/estofamento" />
+
         <TextView
             android:id="@+id/cortinas"
             android:layout_width="111dp"
@@ -740,6 +879,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0" />
+
+        <ImageView
+            android:id="@+id/imagemCortinas"
+            android:layout_width="60dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="1570dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="@drawable/cortinas" />
 
         <TextView
             android:id="@+id/cintoDeSeguranca"
@@ -759,6 +913,21 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0" />
 
+        <ImageView
+            android:id="@+id/imagemCintoDeSeguranca"
+            android:layout_width="60dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="1630dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="@drawable/cintodeseguranca" />
+
         <TextView
             android:id="@+id/freioDeEstacionamento"
             android:layout_width="111dp"
@@ -766,7 +935,7 @@
             android:layout_marginStart="75dp"
             android:layout_marginTop="1690dp"
             android:layout_marginBottom="90dp"
-            android:text="Freio de Estacionamento:"
+            android:text="Freio de Estaci-onamento:"
             android:gravity="center_vertical"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
             android:textSize="16sp"
@@ -777,6 +946,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0" />
+
+        <ImageView
+            android:id="@+id/imagemFreioDeEstacionamento"
+            android:layout_width="60dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="1690dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="@drawable/freioestacionamento" />
 
 
 
@@ -895,8 +1079,6 @@
 
         </RadioGroup>
 
-
-
         <Button
             android:id="@+id/btnSalvar"
             android:layout_width="200dp"
@@ -904,7 +1086,6 @@
             android:layout_marginStart="20dp"
             android:layout_marginBottom="32dp"
             android:text="Salvar"
-
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/item_checklist_data"
+            android:layout_width="184dp"
+            android:layout_height="35dp"
+            android:layout_margin="8dp"
+            android:maxLines="2"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Data" />
+
+
+        <TextView
+            android:id="@+id/item_checklist_hora"
+            android:layout_width="139dp"
+            android:layout_height="35dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/item_checklist_data"
+            app:layout_constraintTop_toBottomOf="@id/item_checklist_data"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Hora" />
+
+        <TextView
+            android:id="@+id/item_checklist_saidaRetorno"
+            android:layout_width="152dp"
+            android:layout_height="35dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/item_checklist_hora"
+            app:layout_constraintTop_toBottomOf="@id/item_checklist_hora"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Saida/Retorno" />
+
+        <TextView
+            android:id="@+id/item_checklist_placa"
+            android:layout_width="152dp"
+            android:layout_height="35dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/item_checklist_saidaRetorno"
+            app:layout_constraintTop_toBottomOf="@id/item_checklist_saidaRetorno"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Placa" />
+
+        <TextView
+            android:id="@+id/item_checklist_motorista"
+            android:layout_width="152dp"
+            android:layout_height="35dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/item_checklist_placa"
+            app:layout_constraintTop_toBottomOf="@id/item_checklist_placa"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Motorista" />
+
+        <TextView
+            android:id="@+id/item_checklist_kmVeiculo"
+            android:layout_width="152dp"
+            android:layout_height="35dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/item_checklist_motorista"
+            app:layout_constraintTop_toBottomOf="@id/item_checklist_motorista"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="KM Veiculo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
