@@ -1,12 +1,7 @@
 package com.beatriz.projetofinalandroid.ui.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,7 +25,6 @@ import rx.schedulers.Schedulers;
 public class ListaCheckList extends AppCompatActivity {
 
     RestClient restClient = new RestClient();
-    private Context context;
     private Adapter adapter;
 
     @Override
@@ -46,6 +40,7 @@ public class ListaCheckList extends AppCompatActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
+        setContentView(R.layout.lista_checklist);
         botaoNovoChecklist();
         getTodosCheckList();
 }
@@ -96,11 +91,12 @@ public class ListaCheckList extends AppCompatActivity {
         listaChecks.setAdapter(adapter);
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
-            public void onItemClick(CheckList checkList) {
+            public void onItemClick(CheckList checkList, int position) {
 
                 Intent abreMain = new Intent(ListaCheckList.this, MainActivity.class);
                 abreMain.putExtra("check", checkList);
-                startActivityIfNeeded(abreMain, 2);
+                abreMain.putExtra("check", position);
+                startActivityIfNeeded(abreMain, 1);
             }
         });
     }

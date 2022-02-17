@@ -59,8 +59,8 @@ public class CheckList implements Serializable {
         return hora;
     }
 
-    public boolean isSaidaRetorno() {
-        return saidaRetorno;
+    public int isSaidaRetorno() {
+        return 1;
     }
 
     public String getPlaca() {

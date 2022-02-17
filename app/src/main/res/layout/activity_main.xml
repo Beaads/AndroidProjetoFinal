@@ -986,7 +986,7 @@
 
             <RadioButton
                 android:id="@+id/TracaoNOK"
-                android:layout_width="80dp"
+                android:layout_width="106dp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
