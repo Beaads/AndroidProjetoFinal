@@ -11,28 +11,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.beatriz.projetofinalandroid.R;
 import com.beatriz.projetofinalandroid.model.CheckList;
-import com.beatriz.projetofinalandroid.retrofit.RestClient;
-import com.beatriz.projetofinalandroid.ui.activity.ListaCheckList;
 
 import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> {
-    private List<CheckList> checkLists;
-    private Context context;
+    private final List<CheckList> checkLists;
+    private final Context context;
     private OnItemClickListener onItemClickListener;
 
-    public Adapter(List<CheckList> checkLists, Context context) {
-        this.checkLists = checkLists;
+    public Adapter(Context context, List<CheckList> checkLists) {
         this.context = context;
-    }
-
-    public Adapter(ListaCheckList listaCheckList, List<CheckList> todosCheck) {
+        this.checkLists = checkLists;
     }
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
-
 
     public Adapter.CheckListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View viewCriada = LayoutInflater.from(context)
@@ -44,15 +38,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> {
     public void onBindViewHolder(@NonNull CheckListViewHolder holder, int position) {
         CheckList checkList = checkLists.get(position);
         holder.vincula(checkList);
-
     }
-
 
     @Override
     public int getItemCount() {
         return checkLists.size();
     }
-
 
     class CheckListViewHolder extends RecyclerView.ViewHolder {
 
@@ -78,15 +69,18 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> {
             });
         }
 
-        public void vincula(CheckList checkList){
+        public void vincula(CheckList checkList) {
             this.checkList = checkList;
             preencheCampo(checkList);
         }
 
-        private void preencheCampo(CheckList checkList){
+        private void preencheCampo(CheckList checkList) {
             data.setText(checkList.getData());
             hora.setText(checkList.getHora());
-            saidaRetorno.setText(checkList.isSaidaRetorno());
+            saidaRetorno.setText(checkList.getSaidaRetorno());
+            placa.setText(checkList.getPlaca());
+            motorista.setText(checkList.getMotorista());
+            kmVeiculo.setText(checkList.getKmVeiculo());
         }
     }
 }

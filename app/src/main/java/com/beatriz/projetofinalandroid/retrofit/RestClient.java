@@ -12,7 +12,9 @@ public final class RestClient {
 
     public final Retrofit getRetrofit() {
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
-        OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)).build();
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .addInterceptor(httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY))
+                .build();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(CheckListService.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())

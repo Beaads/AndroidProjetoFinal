@@ -135,13 +135,13 @@
 
             <RadioButton
                 android:id="@+id/saida"
-                android:layout_width="99dp"
+                android:layout_width="85dp"
                 android:layout_height="37dp"
                 android:text="Saída" />
 
             <RadioButton
                 android:id="@+id/retorno"
-                android:layout_width="99dp"
+                android:layout_width="114dp"
                 android:layout_height="37dp"
                 android:text="Retorno" />
         </RadioGroup>
@@ -172,7 +172,7 @@
             android:layout_height="34dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="86dp"
-            android:ems="20"
+            android:ems="25"
             android:hint="DATA"
             android:inputType="textPersonName"
             android:textColor="@color/black"
@@ -1015,7 +1015,7 @@
 
             <RadioButton
                 android:id="@+id/RodoarNOK"
-                android:layout_width="80dp"
+                android:layout_width="106dp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1045,7 +1045,7 @@
 
             <RadioButton
                 android:id="@+id/CalibragemPneusNOK"
-                android:layout_width="80dp"
+                android:layout_width="106dp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1073,7 +1073,7 @@
 
             <RadioButton
                 android:id="@+id/EstepeNOK"
-                android:layout_width="80dp"
+                android:layout_width="106dp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1114,7 +1114,7 @@
 
             <RadioButton
                 android:id="@+id/FreioDianteiroNOK"
-                android:layout_width="80dp"
+                android:layout_width="106dp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1143,7 +1143,7 @@
 
             <RadioButton
                 android:id="@+id/FreioTraseiroNOK"
-                android:layout_width="80dp"
+                android:layout_width="106dp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1171,7 +1171,7 @@
 
             <RadioButton
                 android:id="@+id/AmortecedorNOK"
-                android:layout_width="80dp"
+                android:layout_width="106dp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1200,7 +1200,7 @@
 
                 <RadioButton
                     android:id="@+id/MolasNOK"
-                    android:layout_width="80dp"
+                    android:layout_width="106dp"
                     android:layout_height="match_parent"
                     android:text="NOK"
                     tools:ignore="DuplicateIds" />
@@ -1230,7 +1230,7 @@
 
             <RadioButton
                 android:id="@+id/CambioOleoNOK"
-                android:layout_width="80dp"
+                android:layout_width="106dp"
                 android:layout_height="match_parent"
                 android:text="NOK"
                 tools:ignore="DuplicateIds" />
@@ -1260,7 +1260,7 @@
 
             <RadioButton
                 android:id="@+id/DirecaoOleoNOK"
-                android:layout_width="80dp"
+                android:layout_width="106dp"
                 android:layout_height="match_parent"
                 android:text="NOK"
                 tools:ignore="DuplicateIds" />
@@ -1289,7 +1289,7 @@
 
             <RadioButton
                 android:id="@+id/LimpezaRadiadorAguaNOK"
-                android:layout_width="80dp"
+                android:layout_width="106dp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1317,7 +1317,7 @@
 
             <RadioButton
                 android:id="@+id/OleoMotorNOK"
-                android:layout_width="80dp"
+                android:layout_width="106dp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1345,7 +1345,7 @@
 
             <RadioButton
                 android:id="@+id/RetrovisorNOK"
-                android:layout_width="80dp"
+                android:layout_width="106dp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1373,7 +1373,7 @@
 
             <RadioButton
                 android:id="@+id/paraBrisaNOK"
-                android:layout_width="80dp"
+                android:layout_width="106dp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1401,7 +1401,7 @@
 
             <RadioButton
                 android:id="@+id/paraChoqueDianteiroNOK"
-                android:layout_width="80dp"
+                android:layout_width="106dp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1429,7 +1429,7 @@
 
             <RadioButton
                 android:id="@+id/paraChoqueTraseiroNOK"
-                android:layout_width="80dp"
+                android:layout_width="106dp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1457,7 +1457,7 @@
 
             <RadioButton
                 android:id="@+id/estofamentoNOK"
-                android:layout_width="80dp"
+                android:layout_width="106dp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1485,7 +1485,7 @@
 
             <RadioButton
                 android:id="@+id/cortinasNOK"
-                android:layout_width="80dp"
+                android:layout_width="106dp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1513,7 +1513,7 @@
 
             <RadioButton
                 android:id="@+id/cintoDeSegurancaNOK"
-                android:layout_width="80dp"
+                android:layout_width="106dp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1541,7 +1541,7 @@
 
             <RadioButton
                 android:id="@+id/freioDeEstacionamentoNOK"
-                android:layout_width="80dp"
+                android:layout_width="106dp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 

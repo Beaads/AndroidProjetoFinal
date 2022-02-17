@@ -4,164 +4,43 @@ import java.io.Serializable;
 
 public class CheckList implements Serializable {
 
-    //cabeçalho
     private int id;
     private String data;
     private String hora;
-    private boolean saidaRetorno;
+    private String saidaRetorno;
     private String placa;
     private String motorista;
-    private double kmVeiculo;
+    private String kmVeiculo;
+    private String tracao;
+    private String rodoar;
+    private String calibragemPneus;
+    private String estepe;
+    private String freioDianteiro;
+    private String freioTraseiro;
+    private String amortecedor;
+    private String molas;
+    private String cambioOleo;
+    private String direcaoOleo;
+    private String limpezaRadiadorAgua;
+    private String oleoMotor;
+    private String retrovisor;
+    private String paraBrisa;
+    private String paraChoqueDianteiro;
+    private String paraChoqueTraseiro;
+    private String estofamento;
+    private String cortinas;
+    private String cintoDeSeguranca;
+    private String freioDeEstacionamento;
 
-    //infos booleanas
-    //Pneus do veiculo
-    private boolean tracao;
-    private boolean rodoar;
-    private boolean calibragemPneus;
-    private boolean estepe;
+    public CheckList(String data, String hora, String saidaRetorno, String placa,
+                     String motorista, String kmVeiculo, String tracao, String rodoar,
+                     String calibragemPneus, String estepe, String freioDianteiro,
+                     String freioTraseiro, String amortecedor, String molas, String cambioOleo,
+                     String direcaoOleo, String limpezaRadiadorAgua, String oleoMotor,
+                     String retrovisor, String paraBrisa, String paraChoqueDianteiro,
+                     String paraChoqueTraseiro, String estofamento, String cortinas,
+                     String cintoDeSeguranca, String freioDeEstacionamento) {
 
-    //Freios e suspensao
-    private boolean freioDianteiro;
-    private boolean freioTraseiro;
-    private boolean amortecedor;
-    private boolean molas;
-
-    //motor
-    private boolean cambioOleo;
-    private boolean direcaoOleo;
-    private boolean limpezaRadiadorAgua;
-    private boolean oleoMotor;
-
-    //parte externa
-    private boolean retrovisor;
-    private boolean paraBrisa;
-    private boolean paraChoqueDianteiro;
-    private boolean paraChoqueTraseiro;
-
-    //parte interna
-    private boolean estofamento;
-    private boolean cortinas;
-    private boolean cintoDeSeguranca;
-    private boolean freioDeEstacionamento;
-
-    public CheckList(String toString, String data, String hora, boolean saidaRetorno, String placa, String motorista) {
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getData() {
-        return data;
-    }
-
-    public String getHora() {
-        return hora;
-    }
-
-    public int isSaidaRetorno() {
-        return 1;
-    }
-
-    public String getPlaca() {
-        return placa;
-    }
-
-    public String getMotorista() {
-        return motorista;
-    }
-
-    public double getKmVeiculo() {
-        return kmVeiculo;
-    }
-
-    public boolean isTracao() {
-        return tracao;
-    }
-
-    public boolean isRodoar() {
-        return rodoar;
-    }
-
-    public boolean isCalibragemPneus() {
-        return calibragemPneus;
-    }
-
-    public boolean isEstepe() {
-        return estepe;
-    }
-
-    public boolean isFreioDianteiro() {
-        return freioDianteiro;
-    }
-
-    public boolean isFreioTraseiro() {
-        return freioTraseiro;
-    }
-
-    public boolean isAmortecedor() {
-        return amortecedor;
-    }
-
-    public boolean isMolas() {
-        return molas;
-    }
-
-    public boolean isCambioOleo() {
-        return cambioOleo;
-    }
-
-    public boolean isDirecaoOleo() {
-        return direcaoOleo;
-    }
-
-    public boolean isLimpezaRadiadorAgua() {
-        return limpezaRadiadorAgua;
-    }
-
-    public boolean isOleoMotor() {
-        return oleoMotor;
-    }
-
-    public boolean isRetrovisor() {
-        return retrovisor;
-    }
-
-    public boolean isParaBrisa() {
-        return paraBrisa;
-    }
-
-    public boolean isParaChoqueDianteiro() {
-        return paraChoqueDianteiro;
-    }
-
-    public boolean isParaChoqueTraseiro() {
-        return paraChoqueTraseiro;
-    }
-
-    public boolean isEstofamento() {
-        return estofamento;
-    }
-
-    public boolean isCortinas() {
-        return cortinas;
-    }
-
-    public boolean isCintoDeSeguranca() {
-        return cintoDeSeguranca;
-    }
-
-    public boolean isFreioDeEstacionamento() {
-        return freioDeEstacionamento;
-    }
-
-    public CheckList(int id, String data, String hora, boolean saidaRetorno, String placa, String motorista,
-                     double kmVeiculo, boolean tracao, boolean rodoar, boolean calibragemPneus, boolean estepe,
-                     boolean freioDianteiro, boolean freioTraseiro, boolean amortecedor, boolean molas, boolean cambioOleo,
-                     boolean direcaoOleo, boolean limpezaRadiadorAgua, boolean oleoMotor, boolean retrovisor,
-                     boolean paraBrisa, boolean paraChoqueDianteiro, boolean paraChoqueTraseiro, boolean estofamento,
-                     boolean cortinas, boolean cintoDeSeguranca, boolean freioDeEstacionamento) {
-        this.id = id;
         this.data = data;
         this.hora = hora;
         this.saidaRetorno = saidaRetorno;
@@ -188,9 +67,117 @@ public class CheckList implements Serializable {
         this.cortinas = cortinas;
         this.cintoDeSeguranca = cintoDeSeguranca;
         this.freioDeEstacionamento = freioDeEstacionamento;
-
-
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public String getSaidaRetorno() {
+        return saidaRetorno;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public String getMotorista() {
+        return motorista;
+    }
+
+    public String getKmVeiculo() {
+        return kmVeiculo;
+    }
+
+    public String getTracao() {
+        return tracao;
+    }
+
+    public String getRodoar() {
+        return rodoar;
+    }
+
+    public String getCalibragemPneus() {
+        return calibragemPneus;
+    }
+
+    public String getEstepe() {
+        return estepe;
+    }
+
+    public String getFreioDianteiro() {
+        return freioDianteiro;
+    }
+
+    public String getFreioTraseiro() {
+        return freioTraseiro;
+    }
+
+    public String getAmortecedor() {
+        return amortecedor;
+    }
+
+    public String getMolas() {
+        return molas;
+    }
+
+    public String getCambioOleo() {
+        return cambioOleo;
+    }
+
+    public String getDirecaoOleo() {
+        return direcaoOleo;
+    }
+
+    public String getLimpezaRadiadorAgua() {
+        return limpezaRadiadorAgua;
+    }
+
+    public String getOleoMotor() {
+        return oleoMotor;
+    }
+
+    public String getRetrovisor() {
+        return retrovisor;
+    }
+
+    public String getParaBrisa() {
+        return paraBrisa;
+    }
+
+    public String getParaChoqueDianteiro() {
+        return paraChoqueDianteiro;
+    }
+
+    public String getParaChoqueTraseiro() {
+        return paraChoqueTraseiro;
+    }
+
+    public String getEstofamento() {
+        return estofamento;
+    }
+
+    public String getCortinas() {
+        return cortinas;
+    }
+
+    public String getCintoDeSeguranca() {
+        return cintoDeSeguranca;
+    }
+
+    public String getFreioDeEstacionamento() {
+        return freioDeEstacionamento;
+    }
+
 }
+
 
 

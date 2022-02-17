@@ -32,21 +32,21 @@ public class ListaCheckList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lista_checklist);
         setTitle("Adicionar Novo CheckList");
-        botaoNovoChecklist();
         getTodosCheckList();
-
+        botaoNovoChecklist();
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
         setContentView(R.layout.lista_checklist);
-        botaoNovoChecklist();
         getTodosCheckList();
-}
+        botaoNovoChecklist();
+    }
 
     public void getTodosCheckList() {
-        Observable<List<CheckList>> observable = restClient.getRetrofit().create(CheckListService.class).getChecklists();
+        Observable<List<CheckList>> observable = restClient.getRetrofit().create
+                (CheckListService.class).getChecklists();
         observable
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -58,19 +58,21 @@ public class ListaCheckList extends AppCompatActivity {
 
                     @Override
                     public void onError(Throwable e) {
-                            Toast.makeText(ListaCheckList.this, "Erro: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(ListaCheckList.this, "Erro: " +
+                                e.getMessage(), Toast.LENGTH_LONG).show();
                     }
 
                     @Override
                     public void onNext(List<CheckList> checkLists) {
-                        Toast.makeText(ListaCheckList.this, "Sucesso", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ListaCheckList.this, "Sucesso",
+                                Toast.LENGTH_SHORT).show();
                         configuraRecyclerView(checkLists);
                     }
                 });
     }
 
     private void botaoNovoChecklist() {
-        FloatingActionButton botaoNovoChecklist = findViewById(R.id.lista_funcionarios_insere_checklist);
+        FloatingActionButton botaoNovoChecklist = findViewById(R.id.lista_insere_checklist);
         botaoNovoChecklist.setOnClickListener(view -> vaiParaActivityMainActivity());
     }
 

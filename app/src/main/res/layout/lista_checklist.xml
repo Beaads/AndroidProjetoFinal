@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
-        app:layout_constraintBottom_toTopOf="@+id/lista_funcionarios_insere_checklist"
+        app:layout_constraintBottom_toTopOf="@+id/lista_insere_checklist"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
         tools:listitem="@layout/item_checklist" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/lista_funcionarios_insere_checklist"
+        android:id="@+id/lista_insere_checklist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
