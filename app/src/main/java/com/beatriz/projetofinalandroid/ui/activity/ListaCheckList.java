@@ -1,7 +1,11 @@
 package com.beatriz.projetofinalandroid.ui.activity;
 
+import static com.beatriz.projetofinalandroid.ui.activity.CheckListActivityConstantes.CHAVE_CHECKLIST;
+import static com.beatriz.projetofinalandroid.ui.activity.CheckListActivityConstantes.CODIGO_RESULTADO_CHECKLIST_CRIADO;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +30,7 @@ public class ListaCheckList extends AppCompatActivity {
 
     RestClient restClient = new RestClient();
     private Adapter adapter;
+    MainActivity main = new MainActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +88,7 @@ public class ListaCheckList extends AppCompatActivity {
         startActivityIfNeeded(iniciaActivityMain, 1);
     }
 
+
     private void configuraRecyclerView(List<CheckList> todosCheck) {
         RecyclerView listaCheck = findViewById(R.id.lista_checklist_recyclerview);
         configuraAdapter(todosCheck, listaCheck);
@@ -95,10 +101,10 @@ public class ListaCheckList extends AppCompatActivity {
             @Override
             public void onItemClick(CheckList checkList, int position) {
 
-                Intent abreMain = new Intent(ListaCheckList.this, MainActivity.class);
-                abreMain.putExtra("check", checkList);
-                abreMain.putExtra("check", position);
-                startActivityIfNeeded(abreMain, 1);
+                Intent abreMaincomCheck = new Intent(ListaCheckList.this, MainActivity.class);
+                abreMaincomCheck.putExtra(CHAVE_CHECKLIST, checkList);
+                abreMaincomCheck.putExtra("posicao", position);
+                startActivityIfNeeded(abreMaincomCheck, CODIGO_RESULTADO_CHECKLIST_CRIADO);
             }
         });
     }

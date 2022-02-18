@@ -69,6 +69,9 @@ public class CheckList implements Serializable {
         this.freioDeEstacionamento = freioDeEstacionamento;
     }
 
+    public CheckList() {
+    }
+
     public int getId() {
         return id;
     }

@@ -1,15 +1,19 @@
 package com.beatriz.projetofinalandroid.ui.activity;
 
+import static com.beatriz.projetofinalandroid.ui.activity.CheckListActivityConstantes.CHAVE_CHECKLIST;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.beatriz.projetofinalandroid.R;
@@ -25,6 +29,9 @@ import rx.schedulers.Schedulers;
 public class MainActivity extends AppCompatActivity {
 
     RestClient restClient = new RestClient();
+    public CheckList check = new CheckList();
+
+    private int posicaoRecebida;
 
     Button btnSalvar;
     RadioGroup RadioSaidaretorno;
@@ -53,11 +60,90 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTitle("CheckList");
         BotaoSalvaChecklist();
+
+        Intent dadosRecebidos = getIntent();
+
+        if(dadosRecebidos.hasExtra(CHAVE_CHECKLIST) && dadosRecebidos.hasExtra("posicao")) {
+        setTitle("Visualizar CheckList");
+        CheckList checkRecebido = (CheckList) dadosRecebidos.getSerializableExtra(CHAVE_CHECKLIST);
+        check = checkRecebido;
+       // posicaoRecebida = dadosRecebidos.getIntExtra("position", -1);
+        TextView data = findViewById(R.id.data);
+        data.setText(checkRecebido.getData());
+        data.setEnabled(false);
+
+        TextView hora = findViewById(R.id.hora);
+        hora.setText(checkRecebido.getHora());
+        hora.setEnabled(false);
+
+        TextView placa = findViewById(R.id.placa);
+        placa.setText(checkRecebido.getPlaca());
+        placa.setEnabled(false);
+
+        RadioSaidaretorno = findViewById(R.id.saidaretorno);
+        RadioButton selSaidaRetorno = findViewById(R.id.retorno);
+        RadioButton selSaidaRetorno1 = findViewById(R.id.saida);
+        if (RadioSaidaretorno.getCheckedRadioButtonId() == -1) {
+            selSaidaRetorno.setEnabled(false);
+            selSaidaRetorno.setChecked(true);
+            } selSaidaRetorno1.setEnabled(false);
+
+
+//        RadioGroup saidaRetorno = findViewById(R.id.saidaretorno);
+//        saidaRetorno.getCheckedRadioButtonId();
+//        saidaRetorno.setEnabled(false);
+//
+//        RadioButton retornosaida = findViewById(R.id.retorno);
+//        retornosaida.setText(checkRecebido.getSaidaRetorno());
+//        retornosaida.setChecked(true);
+//        retornosaida.setEnabled(false);
+//
+//        RadioButton saida = findViewById(R.id.saida);
+//        saida.setText(checkRecebido.getSaidaRetorno());
+//        saida.setChecked(true);
+//        saida.setEnabled(false);
+
+
+        TextView motorista = findViewById(R.id.motorista);
+        motorista.setText(checkRecebido.getMotorista());
+        motorista.setEnabled(false);
+
+        TextView kmVeiculo = findViewById(R.id.kmveiculo);
+        kmVeiculo.setText(checkRecebido.getKmVeiculo());
+        kmVeiculo.setEnabled(false);
+
+        RadioButton tracaoOK = findViewById(R.id.TracaoOK);
+        tracaoOK.setEnabled(false);
+
+        RadioButton tracaoNOK = findViewById(R.id.TracaoNOK);
+        tracaoNOK.setEnabled(false);
+
+        RadioButton rodoarOK = findViewById(R.id.RodoarOK);
+        rodoarOK.setEnabled(false);
+
+        RadioButton rodoarNOK = findViewById(R.id.RodoarNOK);
+        rodoarNOK.setEnabled(false);
+
+        RadioButton calibragempneusOk = findViewById(R.id.CalibragemPneusOK);
+        calibragempneusOk.setEnabled(false);
+
+        RadioButton calibragempneusNOK = findViewById(R.id.CalibragemPneusNOK);
+        calibragempneusNOK.setEnabled(false);
+
+        RadioButton estepeOk = findViewById(R.id.EstepeOK);
+        estepeOk.setEnabled(false);
+
+        RadioButton estepeNOk = findViewById(R.id.EstepeNOK);
+        estepeNOk.setEnabled(false);
+
+        return;
+       }
+       setTitle("CheckList");
     }
 
     public void adicionaCheck() {
+        if(criaCheckList().getId() == 0) {
         CheckList checkListCriado = criaCheckList();
         Observable<CheckList> observable = (Observable<CheckList>) restClient.getRetrofit()
                 .create(CheckListService.class).salva(checkListCriado);
@@ -81,8 +167,36 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Sucesso ao criar",
                                 Toast.LENGTH_SHORT).show();
                     }
-                });
+        });
     }
+        if (check.getId() != 0) {
+            CheckList checkListCriado = criaCheckList();
+            Observable<CheckList> observable = restClient.getRetrofit().create
+                    (CheckListService.class).getCheckListPorId(check.getId());
+            observable
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new Observer<CheckList>() {
+                        @Override
+                        public void onCompleted() {
+
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+                            Toast.makeText(MainActivity.this, "Erro: " +
+                                    e.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+
+                        @Override
+                        public void onNext(CheckList checkList) {
+                            Toast.makeText(MainActivity.this, "Sucesso",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        }
+    }
+
 
     private void BotaoSalvaChecklist() {
         btnSalvar = findViewById(R.id.btnSalvar);
@@ -181,7 +295,7 @@ public class MainActivity extends AppCompatActivity {
 
                     Toast.makeText(MainActivity.this, "Erro ao salvar, selecione " +
                             "todas as opções", Toast.LENGTH_SHORT).show();
-                    selTracao.setError(null);
+
                     if (RadioSaidaretorno.getCheckedRadioButtonId() == -1) {
                         selSaidaRetorno.setError("*");
                     }
@@ -267,10 +381,10 @@ public class MainActivity extends AppCompatActivity {
                 (R.id.data);
         EditText hora = findViewById
                 (R.id.hora);
-        EditText placa = findViewById
-                (R.id.placa);
         RadioButton selSaidaRetorno = findViewById
                 (RadioSaidaretorno.getCheckedRadioButtonId());
+        EditText placa = findViewById
+                (R.id.placa);
         EditText motorista = findViewById
                 (R.id.motorista);
         EditText kmVeiculo = findViewById
@@ -317,8 +431,8 @@ public class MainActivity extends AppCompatActivity {
                 (RadiofreioDeEstacionamentoOKNOK.getCheckedRadioButtonId());
 
         return new CheckList(data.getText().toString(),
-                hora.getText().toString(), placa.getText().toString(),
-                selSaidaRetorno.getText().toString(), motorista.getText().toString(),
+                hora.getText().toString(), selSaidaRetorno.getText().toString(),
+                placa.getText().toString(), motorista.getText().toString(),
                 kmVeiculo.getText().toString(), selTracao.getText().toString(),
                 selRodoar.getText().toString(), selCalibragemPneus.getText().toString(),
                 selEstepe.getText().toString(), selFreioDianteiro.getText().toString(),
@@ -332,3 +446,5 @@ public class MainActivity extends AppCompatActivity {
                 selFreioDeEstacionamento.getText().toString());
     }
 }
+
+
