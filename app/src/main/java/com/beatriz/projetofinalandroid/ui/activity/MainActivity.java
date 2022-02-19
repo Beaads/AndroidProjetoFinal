@@ -81,28 +81,54 @@ public class MainActivity extends AppCompatActivity {
         placa.setText(checkRecebido.getPlaca());
         placa.setEnabled(false);
 
-        RadioSaidaretorno = findViewById(R.id.saidaretorno);
+
         RadioButton selSaidaRetorno = findViewById(R.id.retorno);
         RadioButton selSaidaRetorno1 = findViewById(R.id.saida);
-        if (RadioSaidaretorno.getCheckedRadioButtonId() == -1) {
-            selSaidaRetorno.setEnabled(false);
-            selSaidaRetorno.setChecked(true);
-            } selSaidaRetorno1.setEnabled(false);
+        selSaidaRetorno.setEnabled(false);
+        selSaidaRetorno1.setEnabled(false);
+            if (checkRecebido.getSaidaRetorno().equals("Retorno")) {
+                selSaidaRetorno.setChecked(true);
+            } else {
+                selSaidaRetorno1.setChecked(true);
+            }
+
+        RadioButton selTracaoOk = findViewById(R.id.TracaoOK);
+        RadioButton selTracaoNOk = findViewById(R.id.TracaoNOK);
+        selTracaoOk.setEnabled(false);
+        selTracaoNOk.setEnabled(false);
+        if (checkRecebido.getTracao().equals("OK")) selTracaoOk.setChecked(true);
+        else selTracaoNOk.setChecked(true);
 
 
-//        RadioGroup saidaRetorno = findViewById(R.id.saidaretorno);
-//        saidaRetorno.getCheckedRadioButtonId();
-//        saidaRetorno.setEnabled(false);
-//
-//        RadioButton retornosaida = findViewById(R.id.retorno);
-//        retornosaida.setText(checkRecebido.getSaidaRetorno());
-//        retornosaida.setChecked(true);
-//        retornosaida.setEnabled(false);
-//
-//        RadioButton saida = findViewById(R.id.saida);
-//        saida.setText(checkRecebido.getSaidaRetorno());
-//        saida.setChecked(true);
-//        saida.setEnabled(false);
+        RadioButton selRodoarOk = findViewById(R.id.RodoarOK);
+        RadioButton selRodoarNOk = findViewById(R.id.RodoarNOK);
+            selRodoarOk.setEnabled(false);
+            selRodoarNOk.setEnabled(false);
+        if (checkRecebido.getRodoar().equals("OK")) selRodoarOk.setChecked(true);
+        else selRodoarNOk.setChecked(true);
+
+
+
+        RadioButton selCalibragemOk = findViewById(R.id.CalibragemPneusOK);
+        RadioButton selCalibragemNOk = findViewById(R.id.CalibragemPneusNOK);
+            selCalibragemOk.setEnabled(false);
+            selCalibragemNOk.setEnabled(false);
+        if (checkRecebido.getCalibragemPneus().equals("OK")) selCalibragemOk.setChecked(true);
+        else selCalibragemNOk.setChecked(true);
+
+        RadioButton selEstepeOk = findViewById(R.id.EstepeOK);
+        RadioButton selEstepeNOk = findViewById(R.id.EstepeNOK);
+            selEstepeOk.setEnabled(false);
+            selEstepeNOk.setEnabled(false);
+        if (checkRecebido.getEstepe().equals("OK")) selEstepeOk.setChecked(true);
+        else selEstepeNOk.setChecked(true);
+
+        RadioButton selFreioDianteiroOk = findViewById(R.id.FreioDianteiroOK);
+        RadioButton selFreioDianteiroNOk = findViewById(R.id.FreioDianteiroNOK);
+            selFreioDianteiroOk.setEnabled(false);
+            selFreioDianteiroNOk.setEnabled(false);
+        if (checkRecebido.getFreioDianteiro().equals("OK")) selFreioDianteiroOk.setChecked(true);
+        else selFreioDianteiroNOk.setChecked(true);
 
 
         TextView motorista = findViewById(R.id.motorista);
