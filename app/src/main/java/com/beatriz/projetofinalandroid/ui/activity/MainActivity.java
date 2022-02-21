@@ -345,6 +345,11 @@ public class MainActivity extends AppCompatActivity {
     private void BotaoSalvaChecklist() {
         btnSalvar = findViewById(R.id.btnSalvar);
 
+        EditText Data = findViewById(R.id.data);
+        EditText Hora = findViewById(R.id.hora);
+        EditText Placa = findViewById(R.id.placa);
+        EditText Motorista = findViewById(R.id.motorista);
+        EditText KmVeiculo = findViewById(R.id.kmveiculo);
         RadioSaidaretorno = findViewById(R.id.saidaretorno);
         RadioTracaoOKNOK = findViewById(R.id.TracaoOKNOK);
         RadioRodoarOKNOK = findViewById(R.id.RodoarOKNOK);
@@ -372,6 +377,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 EditText selData = findViewById(R.id.data);
+                EditText selPlaca = findViewById(R.id.placa);
+                EditText selHora = findViewById(R.id.hora);
+                EditText selMotorista = findViewById(R.id.motorista);
+                EditText selKmVeiculo = findViewById(R.id.kmveiculo);
 
                 RadioButton selSaidaRetorno = findViewById(R.id.retorno);
                 RadioButton selTracao = findViewById(R.id.TracaoNOK);
@@ -395,7 +404,7 @@ public class MainActivity extends AppCompatActivity {
                 RadioButton selCintoDeSeguranca = findViewById(R.id.cintoDeSegurancaNOK);
                 RadioButton selFreioDeEstacionamento = findViewById(R.id.freioDeEstacionamentoNOK);
 
-                selData.setError(null);
+
                 selSaidaRetorno.setError(null);
                 selTracao.setError(null);
                 selRodoar.setError(null);
@@ -418,7 +427,12 @@ public class MainActivity extends AppCompatActivity {
                 selCintoDeSeguranca.setError(null);
                 selFreioDeEstacionamento.setError(null);
 
-                if (    RadioSaidaretorno.getCheckedRadioButtonId() == -1 ||
+                if (    Data.getText().toString().length() == 0 ||
+                        Hora.getText().toString().length() == 0 ||
+                        Placa.getText().toString().length() == 0 ||
+                        Motorista.getText().toString().length() == 0 ||
+                        KmVeiculo.getText().toString().length() == 0 ||
+                        RadioSaidaretorno.getCheckedRadioButtonId() == -1 ||
                         RadioTracaoOKNOK.getCheckedRadioButtonId() == -1 ||
                         RadioRodoarOKNOK.getCheckedRadioButtonId() == -1 ||
                         RadioCalibragemPneusOKNOK.getCheckedRadioButtonId() == -1 ||
@@ -443,6 +457,21 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Erro ao salvar, selecione " +
                             "todas as opções", Toast.LENGTH_SHORT).show();
 
+                    if(Data.getText().toString().length() == 0){
+                        selData.setError("*");
+                    }
+                    if(Hora.getText().toString().length() == 0){
+                        selPlaca.setError("*");
+                    }
+                    if(Placa.getText().toString().length() == 0){
+                        selHora.setError("*");
+                    }
+                    if(Motorista.getText().toString().length() == 0){
+                        selMotorista.setError("*");
+                    }
+                    if(KmVeiculo.getText().toString().length() == 0){
+                        selKmVeiculo.setError("*");
+                    }
                     if (RadioSaidaretorno.getCheckedRadioButtonId() == -1) {
                         selSaidaRetorno.setError("*");
                     }
