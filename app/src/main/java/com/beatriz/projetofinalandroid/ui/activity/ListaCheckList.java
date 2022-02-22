@@ -53,7 +53,6 @@ public class ListaCheckList extends AppCompatActivity {
                 .subscribe(new Observer<List<CheckList>>() {
                     @Override
                     public void onCompleted() {
-
                     }
 
                     @Override

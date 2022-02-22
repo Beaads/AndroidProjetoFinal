@@ -64,18 +64,21 @@ public class MainActivity extends AppCompatActivity {
             setTitle("Visualizar CheckList");
             CheckList checkRecebido = (CheckList) dadosRecebidos.getSerializableExtra("checklist");
             check = checkRecebido;
+
+            Button btnSalvar = findViewById(R.id.btnSalvar);
+            btnSalvar.setEnabled(false);
+
             TextView data = findViewById(R.id.data);
             data.setText(checkRecebido.getData());
             data.setEnabled(false);
-
-            TextView hora = findViewById(R.id.hora);
-            hora.setText(checkRecebido.getHora());
-            hora.setEnabled(false);
 
             TextView placa = findViewById(R.id.placa);
             placa.setText(checkRecebido.getPlaca());
             placa.setEnabled(false);
 
+            TextView hora = findViewById(R.id.hora);
+            hora.setText(checkRecebido.getHora());
+            hora.setEnabled(false);
 
             RadioButton selSaidaRetorno = findViewById(R.id.retorno);
             RadioButton selSaidaRetorno1 = findViewById(R.id.saida);
@@ -309,9 +312,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void BotaoSalvaChecklist() {
         btnSalvar = findViewById(R.id.btnSalvar);
+        EditText Placa = findViewById(R.id.placa);
         EditText Data = findViewById(R.id.data);
         EditText Hora = findViewById(R.id.hora);
-        EditText Placa = findViewById(R.id.placa);
         EditText Motorista = findViewById(R.id.motorista);
         EditText KmVeiculo = findViewById(R.id.kmveiculo);
         RadioSaidaretorno = findViewById(R.id.saidaretorno);
@@ -390,8 +393,8 @@ public class MainActivity extends AppCompatActivity {
                 selFreioDeEstacionamento.setError(null);
 
                 if (    Data.getText().toString().length() == 0 ||
-                        Hora.getText().toString().length() == 0 ||
                         Placa.getText().toString().length() == 0 ||
+                        Hora.getText().toString().length() == 0 ||
                         Motorista.getText().toString().length() == 0 ||
                         KmVeiculo.getText().toString().length() == 0 ||
                         RadioSaidaretorno.getCheckedRadioButtonId() == -1 ||
@@ -422,11 +425,11 @@ public class MainActivity extends AppCompatActivity {
                     if(Data.getText().toString().length() == 0){
                         selData.setError("Preencha este campo");
                     }
+                    if(Placa.getText().toString().length() == 0){
+                    selHora.setError("Preencha este campo");
+                    }
                     if(Hora.getText().toString().length() == 0){
                         selPlaca.setError("Preencha este campo");
-                    }
-                    if(Placa.getText().toString().length() == 0){
-                        selHora.setError("Preencha este campo");
                     }
                     if(Motorista.getText().toString().length() == 0){
                         selMotorista.setError("Preencha este campo");
