@@ -31,7 +31,7 @@
         android:contentDescription="TODO"
         android:focusable="true"
         android:src="@drawable/ic_action_adiciona_check"
-        app:backgroundTint="@color/blue"
+        app:backgroundTint="@color/blue10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.954"

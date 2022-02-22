@@ -1,13 +1,11 @@
 package com.beatriz.projetofinalandroid.ui.activity;
 
-import static com.beatriz.projetofinalandroid.ui.activity.CheckListActivityConstantes.CHAVE_CHECKLIST;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,9 +29,6 @@ public class MainActivity extends AppCompatActivity {
     RestClient restClient = new RestClient();
     public CheckList check = new CheckList();
 
-    private int posicaoRecebida;
-
-    EditText Data;
     Button btnSalvar;
     RadioGroup RadioSaidaretorno;
     RadioGroup RadioTracaoOKNOK;
@@ -65,11 +60,10 @@ public class MainActivity extends AppCompatActivity {
 
         Intent dadosRecebidos = getIntent();
 
-        if (dadosRecebidos.hasExtra(CHAVE_CHECKLIST) && dadosRecebidos.hasExtra("posicao")) {
+        if (dadosRecebidos.hasExtra("checklist") && dadosRecebidos.hasExtra("posicao")) {
             setTitle("Visualizar CheckList");
-            CheckList checkRecebido = (CheckList) dadosRecebidos.getSerializableExtra(CHAVE_CHECKLIST);
+            CheckList checkRecebido = (CheckList) dadosRecebidos.getSerializableExtra("checklist");
             check = checkRecebido;
-            // posicaoRecebida = dadosRecebidos.getIntExtra("position", -1);
             TextView data = findViewById(R.id.data);
             data.setText(checkRecebido.getData());
             data.setEnabled(false);
@@ -283,7 +277,7 @@ public class MainActivity extends AppCompatActivity {
 
             return;
         }
-        setTitle("Adicionar novo CheckList");
+        setTitle("Novo CheckList");
     }
 
     public void adicionaCheck() {
@@ -307,44 +301,14 @@ public class MainActivity extends AppCompatActivity {
 
                         @Override
                         public void onNext(CheckList checklist) {
-                            Toast.makeText(MainActivity.this, "Sucesso ao criar",
-                                    Toast.LENGTH_SHORT).show();
                             finish();
-                        }
-                    });
-        }
-        if (check.getId() != 0) {
-            CheckList checkListCriado = criaCheckList();
-            Observable<CheckList> observable = restClient.getRetrofit().create
-                    (CheckListService.class).getCheckListPorId(check.getId());
-            observable
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(new Observer<CheckList>() {
-                        @Override
-                        public void onCompleted() {
-
-                        }
-
-                        @Override
-                        public void onError(Throwable e) {
-                            Toast.makeText(MainActivity.this, "Erro: " +
-                                    e.getMessage(), Toast.LENGTH_LONG).show();
-                        }
-
-                        @Override
-                        public void onNext(CheckList checkList) {
-                            Toast.makeText(MainActivity.this, "Sucesso",
-                                    Toast.LENGTH_SHORT).show();
                         }
                     });
         }
     }
 
-
     private void BotaoSalvaChecklist() {
         btnSalvar = findViewById(R.id.btnSalvar);
-
         EditText Data = findViewById(R.id.data);
         EditText Hora = findViewById(R.id.hora);
         EditText Placa = findViewById(R.id.placa);
@@ -381,7 +345,6 @@ public class MainActivity extends AppCompatActivity {
                 EditText selHora = findViewById(R.id.hora);
                 EditText selMotorista = findViewById(R.id.motorista);
                 EditText selKmVeiculo = findViewById(R.id.kmveiculo);
-
                 RadioButton selSaidaRetorno = findViewById(R.id.retorno);
                 RadioButton selTracao = findViewById(R.id.TracaoNOK);
                 RadioButton selRodoar = findViewById(R.id.RodoarNOK);
@@ -403,7 +366,6 @@ public class MainActivity extends AppCompatActivity {
                 RadioButton selCortinas = findViewById(R.id.cortinasNOK);
                 RadioButton selCintoDeSeguranca = findViewById(R.id.cintoDeSegurancaNOK);
                 RadioButton selFreioDeEstacionamento = findViewById(R.id.freioDeEstacionamentoNOK);
-
 
                 selSaidaRetorno.setError(null);
                 selTracao.setError(null);
@@ -454,23 +416,23 @@ public class MainActivity extends AppCompatActivity {
                         RadiocintoDeSegurancaOKNOK.getCheckedRadioButtonId() == -1 ||
                         RadiofreioDeEstacionamentoOKNOK.getCheckedRadioButtonId() == -1) {
 
-                    Toast.makeText(MainActivity.this, "Erro ao salvar, selecione " +
-                            "todas as opções", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Erro, responda " +
+                            "todos os campos.", Toast.LENGTH_SHORT).show();
 
                     if(Data.getText().toString().length() == 0){
-                        selData.setError("*");
+                        selData.setError("Preencha este campo");
                     }
                     if(Hora.getText().toString().length() == 0){
-                        selPlaca.setError("*");
+                        selPlaca.setError("Preencha este campo");
                     }
                     if(Placa.getText().toString().length() == 0){
-                        selHora.setError("*");
+                        selHora.setError("Preencha este campo");
                     }
                     if(Motorista.getText().toString().length() == 0){
-                        selMotorista.setError("*");
+                        selMotorista.setError("Preencha este campo");
                     }
                     if(KmVeiculo.getText().toString().length() == 0){
-                        selKmVeiculo.setError("*");
+                        selKmVeiculo.setError("Preencha este campo");
                     }
                     if (RadioSaidaretorno.getCheckedRadioButtonId() == -1) {
                         selSaidaRetorno.setError("*");

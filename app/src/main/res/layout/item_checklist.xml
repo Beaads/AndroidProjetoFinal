@@ -14,7 +14,7 @@
 
         <TextView
             android:id="@+id/item_checklist_data"
-            android:layout_width="184dp"
+            android:layout_width="165dp"
             android:layout_height="35dp"
             android:layout_margin="8dp"
             android:maxLines="2"
@@ -63,7 +63,7 @@
 
         <TextView
             android:id="@+id/item_checklist_motorista"
-            android:layout_width="152dp"
+            android:layout_width="175dp"
             android:layout_height="35dp"
             android:textSize="15sp"
             android:textStyle="bold"
