@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         Intent dadosRecebidos = getIntent();
 
         if (dadosRecebidos.hasExtra("checklist") && dadosRecebidos.hasExtra("posicao")) {
+            getporId();
             setTitle("Visualizar CheckList");
             CheckList checkRecebido = (CheckList) dadosRecebidos.getSerializableExtra("checklist");
             check = checkRecebido;
@@ -279,9 +280,39 @@ public class MainActivity extends AppCompatActivity {
             estepeNOk.setEnabled(false);
 
             return;
+
         }
         setTitle("Novo CheckList");
     }
+
+public void getporId() {
+    if (check.getId() != 0) {
+    Observable<CheckList> observable = restClient.getRetrofit().create
+            (CheckListService.class).getCheckListPorId(check.getId());
+    observable
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(new Observer<CheckList>() {
+                @Override
+                public void onCompleted() {
+                    finish();
+                }
+
+                @Override
+                public void onError(Throwable e) {
+                    Toast.makeText(MainActivity.this, "Erro: " +
+                            e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+
+                @Override
+                public void onNext(CheckList checkList) {
+                    Toast.makeText(MainActivity.this, "Sucesso",
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
+}
+}
+
 
     public void adicionaCheck() {
         if (criaCheckList().getId() == 0) {
@@ -294,6 +325,7 @@ public class MainActivity extends AppCompatActivity {
                     .subscribe(new Observer<CheckList>() {
                         @Override
                         public void onCompleted() {
+                            finish();
                         }
 
                         @Override
@@ -304,7 +336,6 @@ public class MainActivity extends AppCompatActivity {
 
                         @Override
                         public void onNext(CheckList checklist) {
-                            finish();
                         }
                     });
         }
