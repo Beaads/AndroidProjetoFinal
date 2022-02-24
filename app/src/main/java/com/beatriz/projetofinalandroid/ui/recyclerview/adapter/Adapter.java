@@ -55,8 +55,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> i
 
     @Override
     public Filter getFilter() {
-        return filter;
-    }
+
+
 
     Filter filter = new Filter() {
 
@@ -84,8 +84,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> i
             checkLists.clear();
             checkListAll.addAll((Collection<? extends CheckList>) filterResults.values);
             notifyDataSetChanged();
+
         }
     };
+        return filter;
+    }
 
     class CheckListViewHolder extends RecyclerView.ViewHolder {
 
