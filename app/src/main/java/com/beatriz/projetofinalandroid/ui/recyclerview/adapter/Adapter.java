@@ -1,9 +1,12 @@
 package com.beatriz.projetofinalandroid.ui.recyclerview.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,16 +15,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.beatriz.projetofinalandroid.R;
 import com.beatriz.projetofinalandroid.model.CheckList;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> {
+public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> implements Filterable {
     private final List<CheckList> checkLists;
     private final Context context;
     private OnItemClickListener onItemClickListener;
+    List<CheckList> checkListAll;
 
     public Adapter(Context context, List<CheckList> checkLists) {
         this.context = context;
         this.checkLists = checkLists;
+        this.checkListAll = new ArrayList<>(checkLists);
     }
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
@@ -44,6 +51,41 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> {
     public int getItemCount() {
         return checkLists.size();
     }
+
+
+    @Override
+    public Filter getFilter() {
+        return filter;
+    }
+
+    Filter filter = new Filter() {
+
+        //run on background thread
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+            List<CheckList> filteredList = new ArrayList<>();
+            if (charSequence.toString().isEmpty()) {
+                filteredList.addAll(checkListAll);
+            } else {
+                for (CheckList checkList: checkListAll) {
+                    if (checkList.getData().contains(charSequence.toString())) {
+                    filteredList.add(checkList);
+                    }
+                }
+            }
+
+            FilterResults filterResults = new FilterResults();
+            filterResults.values = filteredList;
+            return filterResults;
+        }
+        //run on a ui thread
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+            checkLists.clear();
+            checkListAll.addAll((Collection<? extends CheckList>) filterResults.values);
+            notifyDataSetChanged();
+        }
+    };
 
     class CheckListViewHolder extends RecyclerView.ViewHolder {
 

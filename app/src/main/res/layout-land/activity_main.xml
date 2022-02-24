@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -19,9 +20,9 @@
 
         <ImageView
             android:id="@+id/imagemLogoEmpresa"
-            android:layout_width="155dp"
+            android:layout_width="230dp"
             android:layout_height="45dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -29,13 +30,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/prologimage" />
+            app:srcCompat="@drawable/prolog1" />
 
         <TextView
             android:id="@+id/checklist"
-            android:layout_width="150dp"
+            android:layout_width="260dp"
             android:layout_height="45dp"
-            android:layout_marginStart="215dp"
+            android:layout_marginStart="350dp"
             android:layout_marginTop="16dp"
             android:gravity="center_horizontal"
             android:background="@color/blue10"
@@ -45,7 +46,7 @@
             android:textColor="@color/white"
             android:textColorHighlight="@color/white"
             android:textColorHint="@color/white"
-            android:textSize="17sp"
+            android:textSize="21sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -57,9 +58,9 @@
 
         <EditText
             android:id="@+id/kmveiculo"
-            android:layout_width="203dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="175dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
             android:layout_marginTop="20dp"
             android:ems="20"
             android:hint="KM DO VEÍCULO"
@@ -75,9 +76,9 @@
 
         <EditText
             android:id="@+id/placa"
-            android:layout_width="148dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:ems="20"
             android:hint="PLACA"
             android:layout_marginTop="20dp"
@@ -93,9 +94,9 @@
 
         <EditText
             android:id="@+id/hora"
-            android:layout_width="148dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:ems="20"
             android:layout_marginTop="20dp"
             android:hint="HORA"
@@ -112,10 +113,10 @@
 
         <RadioGroup
             android:id="@+id/saidaretorno"
-            android:layout_width="203dp"
-            android:layout_height="40dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
             android:layout_marginTop="20dp"
-            android:layout_marginStart="175dp"
+            android:layout_marginStart="350dp"
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@id/kmveiculo"
             app:layout_constraintHorizontal_bias="0"
@@ -125,25 +126,25 @@
 
             <RadioButton
                 android:id="@+id/saida"
-                android:layout_width="87dp"
-                android:layout_height="40dp"
-                android:textSize="16sp"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:textSize="21sp"
                 android:text="Saída" />
 
             <RadioButton
                 android:id="@+id/retorno"
-                android:layout_width="116dp"
-                android:layout_height="40dp"
-                android:textSize="16sp"
+                android:layout_width="141dp"
+                android:layout_height="50dp"
+                android:textSize="21sp"
                 android:text="Retorno" />
         </RadioGroup>
 
 
         <EditText
             android:id="@+id/motorista"
-            android:layout_width="203dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="175dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
             android:ems="20"
             android:layout_marginTop="30dp"
             android:hint="MOTORISTA"
@@ -159,10 +160,10 @@
 
         <EditText
             android:id="@+id/data"
-            android:layout_width="148dp"
+            android:layout_width="220dp"
             android:inputType="date"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="30dp"
             android:ems="25"
             android:hint="DATA"
@@ -178,9 +179,9 @@
         <TextView
             android:orientation="vertical"
             android:id="@+id/pneusdoveiculo"
-            android:layout_width="190dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="30dp"
             android:background="@color/blue10"
             android:paddingLeft="15dp"
@@ -190,21 +191,21 @@
             android:textColor="@color/white"
             android:textColorHighlight="@color/white"
             android:textColorHint="@color/white"
-            android:textSize="19sp"
+            android:textSize="21sp"
             app:layout_constraintTop_toBottomOf="@+id/hora"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintVertical_bias="0"/>
 
         <TextView
             android:id="@+id/tracao"
-            android:layout_width="116dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="75dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="145dp"
             android:layout_marginTop="15dp"
             android:gravity="center_vertical"
             android:text="Tração: "
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-            android:textSize="18sp"
+            android:textSize="21sp"
             app:layout_constraintTop_toBottomOf="@id/pneusdoveiculo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -214,9 +215,9 @@
 
         <ImageView
             android:id="@+id/imagemTracao"
-            android:layout_width="60dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/pneusdoveiculo"
             app:layout_constraintEnd_toEndOf="parent"
@@ -229,13 +230,13 @@
 
         <TextView
             android:id="@+id/rodoar"
-            android:layout_width="116dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="75dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="145dp"
             android:gravity="center_vertical"
             android:text="Rodoar:"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-            android:textSize="18sp"
+            android:textSize="21sp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/tracao"
             app:layout_constraintEnd_toEndOf="parent"
@@ -245,9 +246,9 @@
 
         <ImageView
             android:id="@+id/imagemRodoar"
-            android:layout_width="60dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/tracao"
             app:layout_constraintEnd_toEndOf="parent"
@@ -259,13 +260,13 @@
 
         <TextView
             android:id="@+id/calibragempneus"
-            android:layout_width="116dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="75dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="145dp"
             android:gravity="center_vertical"
             android:text="Calibragem  de pneus: "
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-            android:textSize="18sp"
+            android:textSize="21sp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/rodoar"
             app:layout_constraintEnd_toEndOf="parent"
@@ -275,9 +276,9 @@
 
         <ImageView
             android:id="@+id/imagemCalibragemPneus"
-            android:layout_width="60dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/rodoar"
             app:layout_constraintEnd_toEndOf="parent"
@@ -289,13 +290,13 @@
 
         <TextView
             android:id="@+id/estepe"
-            android:layout_width="116dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="75dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="145dp"
             android:gravity="center_vertical"
             android:text="Estepe:"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-            android:textSize="18sp"
+            android:textSize="21sp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/calibragempneus"
             app:layout_constraintEnd_toEndOf="parent"
@@ -305,9 +306,9 @@
 
         <ImageView
             android:id="@+id/imagemEstepe"
-            android:layout_width="60dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -319,9 +320,9 @@
 
         <TextView
             android:id="@+id/freiosesuspensao"
-            android:layout_width="210dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:background="@color/blue10"
             android:paddingLeft="15dp"
             android:paddingTop="5dp"
@@ -330,7 +331,7 @@
             android:textColor="@color/white"
             android:textColorHighlight="@color/white"
             android:textColorHint="@color/white"
-            android:textSize="19sp"
+            android:textSize="21sp"
             android:layout_marginTop="30dp"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintTop_toBottomOf="@id/estepe"
@@ -339,13 +340,13 @@
 
         <TextView
             android:id="@+id/FreioDianteiro"
-            android:layout_width="116dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="75dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="145dp"
             android:text="Freio Dianteiro:"
             android:gravity="center_vertical"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-            android:textSize="17sp"
+            android:textSize="21sp"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/freiosesuspensao"
             app:layout_constraintEnd_toEndOf="parent"
@@ -355,9 +356,9 @@
 
         <ImageView
             android:id="@+id/imagemFreioDianteiro"
-            android:layout_width="60dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/freiosesuspensao"
             app:layout_constraintEnd_toEndOf="parent"
@@ -369,14 +370,14 @@
 
         <TextView
             android:id="@+id/FreioTraseiro"
-            android:layout_width="116dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="75dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="145dp"
             android:layout_marginLeft="16dp"
             android:gravity="center_vertical"
             android:text="Freio Traseiro:"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-            android:textSize="18sp"
+            android:textSize="21sp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/FreioDianteiro"
             app:layout_constraintEnd_toEndOf="parent"
@@ -388,9 +389,9 @@
 
         <ImageView
             android:id="@+id/imagemFreioTraseiro"
-            android:layout_width="60dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/FreioDianteiro"
             app:layout_constraintEnd_toEndOf="parent"
@@ -403,14 +404,14 @@
 
         <TextView
             android:id="@+id/amortecedor"
-            android:layout_width="116dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="75dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="145dp"
             android:layout_marginLeft="16dp"
             android:gravity="center_vertical"
             android:text="Amortecedor:"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-            android:textSize="18sp"
+            android:textSize="21sp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/FreioTraseiro"
             app:layout_constraintEnd_toEndOf="parent"
@@ -422,9 +423,9 @@
 
         <ImageView
             android:id="@+id/imagemAmortecedor"
-            android:layout_width="60dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/FreioTraseiro"
             app:layout_constraintEnd_toEndOf="parent"
@@ -437,13 +438,13 @@
 
         <TextView
             android:id="@+id/molas"
-            android:layout_width="116dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="75dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="145dp"
             android:text="Molas:"
             android:gravity="center_vertical"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-            android:textSize="18sp"
+            android:textSize="21sp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/amortecedor"
             app:layout_constraintEnd_toEndOf="parent"
@@ -456,9 +457,9 @@
 
         <ImageView
             android:id="@+id/imagemMola"
-            android:layout_width="60dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/amortecedor"
             app:layout_constraintEnd_toEndOf="parent"
@@ -470,9 +471,9 @@
 
         <TextView
             android:id="@+id/motor"
-            android:layout_width="90dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:background="@color/blue10"
             android:paddingLeft="15dp"
             android:paddingTop="5dp"
@@ -480,7 +481,7 @@
             android:textColor="@color/white"
             android:textColorHighlight="@color/white"
             android:textColorHint="@color/white"
-            android:textSize="19sp"
+            android:textSize="21sp"
             android:layout_marginTop="30dp"
             app:layout_constraintTop_toBottomOf="@id/molas"
             app:layout_constraintEnd_toEndOf="parent"
@@ -490,14 +491,14 @@
 
         <TextView
             android:id="@+id/cambiooleo"
-            android:layout_width="116dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="75dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="145dp"
             android:layout_marginBottom="80dp"
             android:text="Câmbio de óleo:"
             android:gravity="center_vertical"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-            android:textSize="18sp"
+            android:textSize="21sp"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/motor"
             app:layout_constraintEnd_toEndOf="parent"
@@ -508,9 +509,9 @@
 
         <ImageView
             android:id="@+id/imagemCambioOleo"
-            android:layout_width="60dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/motor"
             app:layout_constraintEnd_toEndOf="parent"
@@ -522,13 +523,13 @@
 
         <TextView
             android:id="@+id/direcaoOleo"
-            android:layout_width="116dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="75dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="145dp"
             android:gravity="center_vertical"
             android:text="Direção óleo:"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-            android:textSize="18sp"
+            android:textSize="21sp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/cambiooleo"
             app:layout_constraintEnd_toEndOf="parent"
@@ -539,9 +540,9 @@
 
         <ImageView
             android:id="@+id/imagemDirecaoOleo"
-            android:layout_width="60dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/cambiooleo"
             app:layout_constraintEnd_toEndOf="parent"
@@ -553,13 +554,13 @@
 
         <TextView
             android:id="@+id/limpezaRadiadorAgua"
-            android:layout_width="116dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="75dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="145dp"
             android:text="Limpeza Radiador Água:"
             android:gravity="center_vertical"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-            android:textSize="18sp"
+            android:textSize="21sp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/direcaoOleo"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -572,9 +573,9 @@
 
         <ImageView
             android:id="@+id/imagemLimpezaRadiadorAgua"
-            android:layout_width="60dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/direcaoOleo"
             app:layout_constraintEnd_toEndOf="parent"
@@ -586,13 +587,13 @@
 
         <TextView
             android:id="@+id/oleoMotor"
-            android:layout_width="116dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="75dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="145dp"
             android:gravity="center_vertical"
             android:text="Óleo do motor:"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-            android:textSize="18sp"
+            android:textSize="21sp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/limpezaRadiadorAgua"
             app:layout_constraintEnd_toEndOf="parent"
@@ -603,9 +604,9 @@
 
         <ImageView
             android:id="@+id/imagemOleoMotor"
-            android:layout_width="60dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/limpezaRadiadorAgua"
             app:layout_constraintEnd_toEndOf="parent"
@@ -617,9 +618,9 @@
 
         <TextView
             android:id="@+id/parteExterna"
-            android:layout_width="158dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="165dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:background="@color/blue10"
             android:paddingLeft="15dp"
             android:paddingTop="5dp"
@@ -627,7 +628,7 @@
             android:textColor="@color/white"
             android:textColorHighlight="@color/white"
             android:textColorHint="@color/white"
-            android:textSize="19sp"
+            android:textSize="21sp"
             android:layout_marginTop="30dp"
             app:layout_constraintTop_toBottomOf="@id/oleoMotor"
             app:layout_constraintEnd_toEndOf="parent"
@@ -637,13 +638,13 @@
 
         <TextView
             android:id="@+id/retrovisor"
-            android:layout_width="116dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="75dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="145dp"
             android:gravity="center_vertical"
             android:text="Retrovisor:"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-            android:textSize="18sp"
+            android:textSize="21sp"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/parteExterna"
             app:layout_constraintEnd_toEndOf="parent"
@@ -654,9 +655,9 @@
 
         <ImageView
             android:id="@+id/imagemRetrovisor"
-            android:layout_width="60dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/parteExterna"
             app:layout_constraintEnd_toEndOf="parent"
@@ -668,13 +669,13 @@
 
         <TextView
             android:id="@+id/parabrisa"
-            android:layout_width="116dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="75dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="145dp"
             android:text="Para-brisa:"
             android:gravity="center_vertical"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-            android:textSize="18sp"
+            android:textSize="21sp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/retrovisor"
             app:layout_constraintEnd_toEndOf="parent"
@@ -685,9 +686,9 @@
 
         <ImageView
             android:id="@+id/imagemParabrisa"
-            android:layout_width="60dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/retrovisor"
             app:layout_constraintEnd_toEndOf="parent"
@@ -701,13 +702,13 @@
 
         <TextView
             android:id="@+id/paraChoqueDianteiro"
-            android:layout_width="116dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="75dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="145dp"
             android:text="Para-choque Dianteiro:"
             android:gravity="center_vertical"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-            android:textSize="18sp"
+            android:textSize="21sp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/parabrisa"
             app:layout_constraintEnd_toEndOf="parent"
@@ -718,9 +719,9 @@
 
         <ImageView
             android:id="@+id/imagemParaChoqueDianteiro"
-            android:layout_width="60dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/parabrisa"
             app:layout_constraintEnd_toEndOf="parent"
@@ -733,13 +734,13 @@
 
         <TextView
             android:id="@+id/paraChoqueTraseiro"
-            android:layout_width="116dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="75dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="145dp"
             android:text="Para-choque Traseiro:"
             android:gravity="center_vertical"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-            android:textSize="18sp"
+            android:textSize="21sp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/paraChoqueDianteiro"
             app:layout_constraintEnd_toEndOf="parent"
@@ -751,9 +752,9 @@
 
         <ImageView
             android:id="@+id/imagemParaChoqueTraseiro"
-            android:layout_width="60dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/paraChoqueDianteiro"
             app:layout_constraintEnd_toEndOf="parent"
@@ -765,9 +766,9 @@
 
         <TextView
             android:id="@+id/parteInterna"
-            android:layout_width="158dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="165dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:background="@color/blue10"
             android:paddingLeft="15dp"
             android:paddingTop="5dp"
@@ -775,7 +776,7 @@
             android:textColor="@color/white"
             android:textColorHighlight="@color/white"
             android:textColorHint="@color/white"
-            android:textSize="19sp"
+            android:textSize="21sp"
             android:layout_marginTop="30dp"
             app:layout_constraintTop_toBottomOf="@id/paraChoqueTraseiro"
             app:layout_constraintEnd_toEndOf="parent"
@@ -785,13 +786,13 @@
 
         <TextView
             android:id="@+id/estofamento"
-            android:layout_width="116dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="75dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="145dp"
             android:text="Estofamento:"
             android:gravity="center_vertical"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-            android:textSize="18sp"
+            android:textSize="21sp"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/parteInterna"
             app:layout_constraintEnd_toEndOf="parent"
@@ -802,9 +803,9 @@
 
         <ImageView
             android:id="@+id/imagemEstofamento"
-            android:layout_width="60dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/parteInterna"
             app:layout_constraintEnd_toEndOf="parent"
@@ -816,13 +817,13 @@
 
         <TextView
             android:id="@+id/cortinas"
-            android:layout_width="116dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="75dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="145dp"
             android:text="Cortinas:"
             android:gravity="center_vertical"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-            android:textSize="18sp"
+            android:textSize="21sp"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/estofamento"
             app:layout_constraintEnd_toEndOf="parent"
@@ -833,9 +834,9 @@
 
         <ImageView
             android:id="@+id/imagemCortinas"
-            android:layout_width="60dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/estofamento"
             app:layout_constraintEnd_toEndOf="parent"
@@ -847,13 +848,13 @@
 
         <TextView
             android:id="@+id/cintoDeSeguranca"
-            android:layout_width="116dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="75dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="145dp"
             android:text="Cinto de Segurança:"
             android:gravity="center_vertical"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-            android:textSize="18sp"
+            android:textSize="21sp"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/cortinas"
             app:layout_constraintEnd_toEndOf="parent"
@@ -864,9 +865,9 @@
 
         <ImageView
             android:id="@+id/imagemCintoDeSeguranca"
-            android:layout_width="60dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/cortinas"
             app:layout_constraintEnd_toEndOf="parent"
@@ -878,14 +879,14 @@
 
         <TextView
             android:id="@+id/freioDeEstacionamento"
-            android:layout_width="116dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="75dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="145dp"
             android:layout_marginBottom="90dp"
             android:text="Freio de Esta- cionamento:"
             android:gravity="center_vertical"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-            android:textSize="18sp"
+            android:textSize="21sp"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/cintoDeSeguranca"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -897,9 +898,9 @@
 
         <ImageView
             android:id="@+id/imagemFreioDeEstacionamento"
-            android:layout_width="60dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/cintoDeSeguranca"
             app:layout_constraintEnd_toEndOf="parent"
@@ -913,9 +914,9 @@
 
         <RadioGroup
             android:id="@+id/TracaoOKNOK"
-            android:layout_width="180dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="195dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
             android:orientation="horizontal"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/pneusdoveiculo"
@@ -926,13 +927,15 @@
 
             <RadioButton
                 android:id="@+id/TracaoOK"
-                android:layout_width="90dp"
+                android:layout_width="120dp"
                 android:layout_height="match_parent"
+                android:textSize="19sp"
                 android:text="OK" />
 
             <RadioButton
                 android:id="@+id/TracaoNOK"
-                android:layout_width="90dp"
+                android:layout_width="141dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -941,9 +944,9 @@
 
         <RadioGroup
             android:id="@+id/RodoarOKNOK"
-            android:layout_width="180dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="195dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/tracao"
@@ -954,13 +957,15 @@
 
             <RadioButton
                 android:id="@+id/RodoarOK"
-                android:layout_width="90dp"
+                android:layout_width="120dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="OK" />
 
             <RadioButton
                 android:id="@+id/RodoarNOK"
-                android:layout_width="90dp"
+                android:layout_width="141dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -970,9 +975,9 @@
 
         <RadioGroup
             android:id="@+id/CalibragemPneusOKNOK"
-            android:layout_width="180dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="195dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0"
@@ -983,13 +988,15 @@
 
             <RadioButton
                 android:id="@+id/CalibragemPneusOK"
-                android:layout_width="90dp"
+                android:layout_width="120dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="OK" />
 
             <RadioButton
                 android:id="@+id/CalibragemPneusNOK"
-                android:layout_width="90dp"
+                android:layout_width="141dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -997,9 +1004,9 @@
 
         <RadioGroup
             android:id="@+id/EstepeOKNOK"
-            android:layout_width="180dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="195dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="10dp"
@@ -1010,13 +1017,15 @@
 
             <RadioButton
                 android:id="@+id/EstepeOK"
-                android:layout_width="90dp"
+                android:layout_width="120dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="OK" />
 
             <RadioButton
                 android:id="@+id/EstepeNOK"
-                android:layout_width="90dp"
+                android:layout_width="141dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1038,9 +1047,9 @@
 
         <RadioGroup
             android:id="@+id/FreioDianteiroOKNOK"
-            android:layout_width="180dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="195dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
             android:layout_marginTop="15dp"
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@id/freiosesuspensao"
@@ -1051,13 +1060,15 @@
 
             <RadioButton
                 android:id="@+id/FreioDianteiroOK"
-                android:layout_width="90dp"
+                android:layout_width="120dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="OK" />
 
             <RadioButton
                 android:id="@+id/FreioDianteiroNOK"
-                android:layout_width="90dp"
+                android:layout_width="141dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1065,9 +1076,9 @@
 
         <RadioGroup
             android:id="@+id/FreioTraseiroOKNOK"
-            android:layout_width="180dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="195dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/FreioDianteiro"
@@ -1079,13 +1090,15 @@
 
             <RadioButton
                 android:id="@+id/FreioTraseiroOK"
-                android:layout_width="90dp"
+                android:layout_width="120dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="OK" />
 
             <RadioButton
                 android:id="@+id/FreioTraseiroNOK"
-                android:layout_width="90dp"
+                android:layout_width="141dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1093,9 +1106,9 @@
 
         <RadioGroup
             android:id="@+id/AmortecedorOKNOK"
-            android:layout_width="180dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="195dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/FreioTraseiro"
@@ -1106,13 +1119,15 @@
 
             <RadioButton
                 android:id="@+id/AmortcedorOK"
-                android:layout_width="90dp"
+                android:layout_width="120dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="OK" />
 
             <RadioButton
                 android:id="@+id/AmortecedorNOK"
-                android:layout_width="90dp"
+                android:layout_width="141dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1120,9 +1135,9 @@
 
         <RadioGroup
             android:id="@+id/MolasOKNOK"
-            android:layout_width="180dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="195dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/amortecedor"
@@ -1133,25 +1148,25 @@
 
                 <RadioButton
                     android:id="@+id/MolasOK"
-                    android:layout_width="90dp"
+                    android:layout_width="120dp"
+                    android:textSize="19sp"
                     android:layout_height="match_parent"
-                    android:text="OK"
-                    tools:ignore="DuplicateIds" />
+                    android:text="OK" />
 
                 <RadioButton
                     android:id="@+id/MolasNOK"
-                    android:layout_width="90dp"
+                    android:layout_width="141dp"
+                    android:textSize="19sp"
                     android:layout_height="match_parent"
-                    android:text="NOK"
-                    tools:ignore="DuplicateIds" />
+                    android:text="NOK" />
 
             </RadioGroup>
 
         <RadioGroup
             android:id="@+id/CambioOleoOKNOK"
-            android:layout_width="180dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="195dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
             android:orientation="horizontal"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/motor"
@@ -1162,13 +1177,15 @@
 
             <RadioButton
                 android:id="@+id/CambioOleoOK"
-                android:layout_width="90dp"
+                android:layout_width="120dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="OK" />
 
             <RadioButton
                 android:id="@+id/CambioOleoNOK"
-                android:layout_width="90dp"
+                android:layout_width="141dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1176,9 +1193,9 @@
 
         <RadioGroup
             android:id="@+id/DirecaoOleoOKNOK"
-            android:layout_width="180dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="195dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/cambiooleo"
@@ -1189,13 +1206,15 @@
 
             <RadioButton
                 android:id="@+id/DirecaoOleoOK"
-                android:layout_width="90dp"
+                android:layout_width="120dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="OK" />
 
             <RadioButton
                 android:id="@+id/DirecaoOleoNOK"
-                android:layout_width="90dp"
+                android:layout_width="141dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1203,9 +1222,9 @@
 
         <RadioGroup
             android:id="@+id/LimpezaRadiadorAguaOKNOK"
-            android:layout_width="180dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="195dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/direcaoOleo"
@@ -1216,13 +1235,15 @@
 
             <RadioButton
                 android:id="@+id/LimpezaRadiadorAguaOK"
-                android:layout_width="90dp"
+                android:layout_width="120dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="OK" />
 
             <RadioButton
                 android:id="@+id/LimpezaRadiadorAguaNOK"
-                android:layout_width="90dp"
+                android:layout_width="141dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1230,9 +1251,9 @@
 
         <RadioGroup
             android:id="@+id/OleoMotorOKNOK"
-            android:layout_width="180dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="195dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/limpezaRadiadorAgua"
@@ -1243,13 +1264,15 @@
 
             <RadioButton
                 android:id="@+id/OleoMotorOK"
-                android:layout_width="90dp"
+                android:layout_width="120dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="OK" />
 
             <RadioButton
                 android:id="@+id/OleoMotorNOK"
-                android:layout_width="90dp"
+                android:layout_width="141dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1257,9 +1280,9 @@
 
         <RadioGroup
             android:id="@+id/RetrovisorOKNOK"
-            android:layout_width="180dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="195dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
             android:orientation="horizontal"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/parteExterna"
@@ -1270,13 +1293,15 @@
 
             <RadioButton
                 android:id="@+id/RetrovisorOK"
-                android:layout_width="90dp"
+                android:layout_width="120dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="OK" />
 
             <RadioButton
                 android:id="@+id/RetrovisorNOK"
-                android:layout_width="90dp"
+                android:layout_width="141dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1284,9 +1309,9 @@
 
         <RadioGroup
             android:id="@+id/paraBrisaOKNOK"
-            android:layout_width="180dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="195dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/retrovisor"
@@ -1297,13 +1322,15 @@
 
             <RadioButton
                 android:id="@+id/paraBrisaOK"
-                android:layout_width="90dp"
+                android:layout_width="120dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="OK" />
 
             <RadioButton
                 android:id="@+id/paraBrisaNOK"
-                android:layout_width="90dp"
+                android:layout_width="141dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1311,9 +1338,9 @@
 
         <RadioGroup
             android:id="@+id/paraChoqueDianteiroOKNOK"
-            android:layout_width="180dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="195dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/parabrisa"
@@ -1324,13 +1351,15 @@
 
             <RadioButton
                 android:id="@+id/paraChoqueDianteiroOK"
-                android:layout_width="90dp"
+                android:layout_width="120dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="OK" />
 
             <RadioButton
                 android:id="@+id/paraChoqueDianteiroNOK"
-                android:layout_width="90dp"
+                android:layout_width="141dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1338,9 +1367,9 @@
 
         <RadioGroup
             android:id="@+id/paraChoqueTraseiroOKNOK"
-            android:layout_width="180dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="195dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/paraChoqueDianteiro"
@@ -1351,13 +1380,15 @@
 
             <RadioButton
                 android:id="@+id/paraChoqueTraseiroOK"
-                android:layout_width="90dp"
+                android:layout_width="120dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="OK" />
 
             <RadioButton
                 android:id="@+id/paraChoqueTraseiroNOK"
-                android:layout_width="90dp"
+                android:layout_width="141dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1365,9 +1396,9 @@
 
         <RadioGroup
             android:id="@+id/estofamentoOKNOK"
-            android:layout_width="180dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="195dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
             android:orientation="horizontal"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/parteInterna"
@@ -1378,13 +1409,15 @@
 
             <RadioButton
                 android:id="@+id/estofamentoOK"
-                android:layout_width="90dp"
+                android:layout_width="120dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="OK" />
 
             <RadioButton
                 android:id="@+id/estofamentoNOK"
-                android:layout_width="90dp"
+                android:layout_width="141dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1392,9 +1425,9 @@
 
         <RadioGroup
             android:id="@+id/cortinasOKNOK"
-            android:layout_width="180dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="195dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
             android:orientation="horizontal"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/estofamento"
@@ -1405,13 +1438,15 @@
 
             <RadioButton
                 android:id="@+id/cortinasOK"
-                android:layout_width="90dp"
+                android:layout_width="120dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="OK" />
 
             <RadioButton
                 android:id="@+id/cortinasNOK"
-                android:layout_width="90dp"
+                android:layout_width="141dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1419,9 +1454,9 @@
 
         <RadioGroup
             android:id="@+id/cintoDeSegurancaOKNOK"
-            android:layout_width="180dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="195dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
             android:orientation="horizontal"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/cortinas"
@@ -1432,13 +1467,15 @@
 
             <RadioButton
                 android:id="@+id/cintoDeSegurancaOK"
-                android:layout_width="90dp"
+                android:layout_width="120dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="OK" />
 
             <RadioButton
                 android:id="@+id/cintoDeSegurancaNOK"
-                android:layout_width="90dp"
+                android:layout_width="141dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 
@@ -1446,9 +1483,9 @@
 
         <RadioGroup
             android:id="@+id/freioDeEstacionamentoOKNOK"
-            android:layout_width="180dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="195dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
             android:orientation="horizontal"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/cintoDeSeguranca"
@@ -1459,13 +1496,15 @@
 
             <RadioButton
                 android:id="@+id/freioDeEstacionamentoOK"
-                android:layout_width="90dp"
+                android:layout_width="120dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="OK" />
 
             <RadioButton
                 android:id="@+id/freioDeEstacionamentoNOK"
-                android:layout_width="90dp"
+                android:layout_width="141dp"
+                android:textSize="19sp"
                 android:layout_height="match_parent"
                 android:text="NOK" />
 

@@ -326,6 +326,7 @@ public void getporId() {
                         @Override
                         public void onCompleted() {
                             finish();
+//                            vaiParaListaCheckList();
                         }
 
                         @Override
@@ -534,7 +535,6 @@ public void getporId() {
                     return;
                 }
                 adicionaCheck();
-                vaiParaListaCheckList();
             }
         });
     }
