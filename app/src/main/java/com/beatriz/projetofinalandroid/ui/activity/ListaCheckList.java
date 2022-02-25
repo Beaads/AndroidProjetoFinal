@@ -61,7 +61,6 @@ public class ListaCheckList extends AppCompatActivity {
             @Override
             public boolean onQueryTextChange(String newText) {
                 adapter.getFilter().filter(newText);
-                //getTodosCheckList();
                 return false;
             }
         });

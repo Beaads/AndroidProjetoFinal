@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             check = checkRecebido;
 
             Button btnSalvar = findViewById(R.id.btnSalvar);
-            btnSalvar.setEnabled(false);
+            btnSalvar.setVisibility(View.INVISIBLE);
 
             TextView data = findViewById(R.id.data);
             data.setText(checkRecebido.getData());
@@ -312,7 +312,6 @@ public void getporId() {
             });
 }
 }
-
 
     public void adicionaCheck() {
         if (criaCheckList().getId() == 0) {

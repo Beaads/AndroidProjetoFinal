@@ -58,11 +58,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> i
     public Filter getFilter() {
         return filter;
     }
-
-
     Filter filter = new Filter() {
 
-        //run on background thread
         @Override
         protected FilterResults performFiltering(CharSequence charSequence) {
             ArrayList<CheckList> filteredList = new ArrayList<>();
@@ -84,7 +81,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> i
             filterResults.values = filteredList;
             return filterResults;
         }
-        //run on a ui thread
         @Override
         protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
             checkLists.clear();
