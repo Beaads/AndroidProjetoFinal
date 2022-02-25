@@ -81,6 +81,14 @@ public class MainActivity extends AppCompatActivity {
             hora.setText(checkRecebido.getHora());
             hora.setEnabled(false);
 
+            TextView motorista = findViewById(R.id.motorista);
+            motorista.setText(checkRecebido.getMotorista());
+            motorista.setEnabled(false);
+
+            TextView kmVeiculo = findViewById(R.id.kmveiculo);
+            kmVeiculo.setText(checkRecebido.getKmVeiculo());
+            kmVeiculo.setEnabled(false);
+
             RadioButton selSaidaRetorno = findViewById(R.id.retorno);
             RadioButton selSaidaRetorno1 = findViewById(R.id.saida);
             selSaidaRetorno.setEnabled(false);
@@ -247,38 +255,6 @@ public class MainActivity extends AppCompatActivity {
                 selFreioDeEstacionamentoOk.setChecked(true);
             else selFreioDeEstacionamentoNOk.setChecked(true);
 
-            TextView motorista = findViewById(R.id.motorista);
-            motorista.setText(checkRecebido.getMotorista());
-            motorista.setEnabled(false);
-
-            TextView kmVeiculo = findViewById(R.id.kmveiculo);
-            kmVeiculo.setText(checkRecebido.getKmVeiculo());
-            kmVeiculo.setEnabled(false);
-
-            RadioButton tracaoOK = findViewById(R.id.TracaoOK);
-            tracaoOK.setEnabled(false);
-
-            RadioButton tracaoNOK = findViewById(R.id.TracaoNOK);
-            tracaoNOK.setEnabled(false);
-
-            RadioButton rodoarOK = findViewById(R.id.RodoarOK);
-            rodoarOK.setEnabled(false);
-
-            RadioButton rodoarNOK = findViewById(R.id.RodoarNOK);
-            rodoarNOK.setEnabled(false);
-
-            RadioButton calibragempneusOk = findViewById(R.id.CalibragemPneusOK);
-            calibragempneusOk.setEnabled(false);
-
-            RadioButton calibragempneusNOK = findViewById(R.id.CalibragemPneusNOK);
-            calibragempneusNOK.setEnabled(false);
-
-            RadioButton estepeOk = findViewById(R.id.EstepeOK);
-            estepeOk.setEnabled(false);
-
-            RadioButton estepeNOk = findViewById(R.id.EstepeNOK);
-            estepeNOk.setEnabled(false);
-
             return;
 
         }
@@ -316,7 +292,7 @@ public void getporId() {
     public void adicionaCheck() {
         if (criaCheckList().getId() == 0) {
             CheckList checkListCriado = criaCheckList();
-            Observable<CheckList> observable = (Observable<CheckList>) restClient.getRetrofit()
+            Observable<CheckList> observable = restClient.getRetrofit()
                     .create(CheckListService.class).salva(checkListCriado);
             observable
                     .subscribeOn(Schedulers.io())
@@ -457,10 +433,10 @@ public void getporId() {
                         selData.setError("Preencha este campo");
                     }
                     if(Placa.getText().toString().length() == 0){
-                    selHora.setError("Preencha este campo");
+                        selPlaca.setError("Preencha este campo");
                     }
                     if(Hora.getText().toString().length() == 0){
-                        selPlaca.setError("Preencha este campo");
+                        selHora.setError("Preencha este campo");
                     }
                     if(Motorista.getText().toString().length() == 0){
                         selMotorista.setError("Preencha este campo");

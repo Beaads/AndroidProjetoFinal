@@ -81,15 +81,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> i
             filterResults.values = filteredList;
             return filterResults;
         }
+
         @Override
         protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
             checkLists.clear();
             checkLists.addAll((Collection<? extends CheckList>) filterResults.values);
             notifyDataSetChanged();
-
         }
     };
-
 
     class CheckListViewHolder extends RecyclerView.ViewHolder {
 

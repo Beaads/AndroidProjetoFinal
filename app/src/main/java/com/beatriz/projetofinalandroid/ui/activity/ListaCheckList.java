@@ -64,11 +64,8 @@ public class ListaCheckList extends AppCompatActivity {
                 return false;
             }
         });
-
         return super.onCreateOptionsMenu(menu);
     }
-
-
 
     public void getTodosCheckList() {
         Observable<List<CheckList>> observable = restClient.getRetrofit().create
@@ -126,4 +123,5 @@ public class ListaCheckList extends AppCompatActivity {
         });
     }
 }
+
 
