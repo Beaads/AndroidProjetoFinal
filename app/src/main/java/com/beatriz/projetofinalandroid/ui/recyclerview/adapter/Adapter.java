@@ -18,6 +18,7 @@ import com.beatriz.projetofinalandroid.model.CheckList;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Locale;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> implements Filterable {
     private final List<CheckList> checkLists;
@@ -55,7 +56,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> i
 
     @Override
     public Filter getFilter() {
-
+        return filter;
+    }
 
 
     Filter filter = new Filter() {
@@ -63,12 +65,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> i
         //run on background thread
         @Override
         protected FilterResults performFiltering(CharSequence charSequence) {
-            List<CheckList> filteredList = new ArrayList<>();
+            ArrayList<CheckList> filteredList = new ArrayList<>();
             if (charSequence.toString().isEmpty()) {
                 filteredList.addAll(checkListAll);
             } else {
                 for (CheckList checkList: checkListAll) {
-                    if (checkList.getData().contains(charSequence.toString())) {
+                    if (checkList.getMotorista().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
+                            checkList.getData().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
+                            checkList.getPlaca().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
+                            checkList.getHora().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
+                            checkList.getSaidaRetorno().toLowerCase().contains(charSequence.toString().toLowerCase())) {
                     filteredList.add(checkList);
                     }
                 }
@@ -82,13 +88,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> i
         @Override
         protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
             checkLists.clear();
-            checkListAll.addAll((Collection<? extends CheckList>) filterResults.values);
+            checkLists.addAll((Collection<? extends CheckList>) filterResults.values);
             notifyDataSetChanged();
 
         }
     };
-        return filter;
-    }
+
 
     class CheckListViewHolder extends RecyclerView.ViewHolder {
 
