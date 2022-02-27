@@ -12,10 +12,7 @@ import rx.Observable;
 
 public interface CheckListService {
 
-    public static final String BASE_URL = "http://192.168.0.55:8080/";
-
-    @GET("funcionarios/{id}")
-    Observable<CheckList> getCheckListPorId(@Path("id") int id);
+    public static final String BASE_URL = "http://192.168.100.103:8080/";
 
     @GET("checklist/")
     Observable<List<CheckList>> getChecklists();

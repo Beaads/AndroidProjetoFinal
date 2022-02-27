@@ -61,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         Intent dadosRecebidos = getIntent();
 
         if (dadosRecebidos.hasExtra("checklist") && dadosRecebidos.hasExtra("posicao")) {
-            getporId();
             setTitle("Visualizar CheckList");
             CheckList checkRecebido = (CheckList) dadosRecebidos.getSerializableExtra("checklist");
             check = checkRecebido;
@@ -259,34 +258,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
         setTitle("Novo CheckList");
-    }
 
-public void getporId() {
-    if (check.getId() != 0) {
-    Observable<CheckList> observable = restClient.getRetrofit().create
-            (CheckListService.class).getCheckListPorId(check.getId());
-    observable
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(new Observer<CheckList>() {
-                @Override
-                public void onCompleted() {
-                    finish();
-                }
-
-                @Override
-                public void onError(Throwable e) {
-                    Toast.makeText(MainActivity.this, "Erro: " +
-                            e.getMessage(), Toast.LENGTH_LONG).show();
-                }
-
-                @Override
-                public void onNext(CheckList checkList) {
-                    Toast.makeText(MainActivity.this, "Sucesso",
-                            Toast.LENGTH_SHORT).show();
-                }
-            });
-}
 }
 
     public void adicionaCheck() {
@@ -301,7 +273,6 @@ public void getporId() {
                         @Override
                         public void onCompleted() {
                             finish();
-//                            vaiParaListaCheckList();
                         }
 
                         @Override
@@ -512,13 +483,6 @@ public void getporId() {
                 adicionaCheck();
             }
         });
-    }
-
-    private void vaiParaListaCheckList() {
-        Intent iniciaListaCheckList =
-                new Intent(MainActivity.this,
-                        ListaCheckList.class);
-        startActivityIfNeeded(iniciaListaCheckList, 2);
     }
 
     @NonNull

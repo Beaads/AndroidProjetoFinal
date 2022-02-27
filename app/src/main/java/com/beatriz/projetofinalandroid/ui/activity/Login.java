@@ -21,7 +21,8 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.tela_login);
         BotaoEntraNaLista();
         setTitle("Prolog App");
-}
+    }
+
     @Override
     protected void onRestart() {
         super.onRestart();
@@ -40,19 +41,31 @@ public class Login extends AppCompatActivity {
                 EditText selLogin = findViewById(R.id.Login);
                 EditText selSenha = findViewById(R.id.Senha);
 
-                if(Login.getText().toString().length() == 0 && Senha.getText().toString().length() == 0) {
+                if (Login.getText().toString().length() == 0 && Senha.getText().toString().length() == 0) {
                     Toast.makeText(Login.this, "Preencha as informações",
-                            Toast.LENGTH_SHORT).show(); }
+                            Toast.LENGTH_SHORT).show();
+                }
+
+                if (!Login.getText().toString().equals("prolog") && !Senha.getText().toString().equals("1234")) {
+                    selLogin.setError("*");
+                    selSenha.setError("*");
+                    Toast.makeText(Login.this, "Login e/ou senha incorretos",
+                            Toast.LENGTH_SHORT).show();
+                }
+
+                if (!Login.getText().toString().equals("prolog") || !Senha.getText().toString().equals("1234")) {
+                    selLogin.setError("*");
+                    selSenha.setError("*");
+                    Toast.makeText(Login.this, "Login e/ou senha incorretos",
+                            Toast.LENGTH_SHORT).show();
+                }
 
                 if (Login.getText().toString().equals("prolog") && Senha.getText().toString().equals("1234")) {
-                    vaiParaListaCheckList();}
+                    vaiParaListaCheckList();
+                }
 
-                     if (Login.getText().toString().equals("prolog")) { } else
-                        selLogin.setError("Login incorreto");
-                     if (Senha.getText().toString().equals("1234")) { } else
-                        selSenha.setError("Senha incorreta");
             }
-            });
+        });
     }
 
     private void vaiParaListaCheckList() {
