@@ -1,7 +1,6 @@
 package com.beatriz.projetofinalandroid.ui.recyclerview.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,6 @@ import com.beatriz.projetofinalandroid.model.CheckList;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Locale;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> implements Filterable {
     private final List<CheckList> checkLists;
@@ -58,24 +56,25 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> i
     public Filter getFilter() {
         return filter;
     }
+
     Filter filter = new Filter() {
 
-        @Override
-        protected FilterResults performFiltering(CharSequence charSequence) {
-            ArrayList<CheckList> filteredList = new ArrayList<>();
-            if (charSequence.toString().isEmpty()) {
+    @Override
+    protected FilterResults performFiltering(CharSequence charSequence) {
+         ArrayList<CheckList> filteredList = new ArrayList<>();
+         if (charSequence.toString().isEmpty()) {
                 filteredList.addAll(checkListAll);
-            } else {
-                for (CheckList checkList: checkListAll) {
-                    if (checkList.getMotorista().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
-                            checkList.getData().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
-                            checkList.getPlaca().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
-                            checkList.getHora().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
-                            checkList.getSaidaRetorno().toLowerCase().contains(charSequence.toString().toLowerCase())) {
-                    filteredList.add(checkList);
-                    }
+         } else {
+            for (CheckList checkList : checkListAll) {
+                if (checkList.getMotorista().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
+                     checkList.getData().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
+                     checkList.getPlaca().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
+                     checkList.getHora().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
+                     checkList.getSaidaRetorno().toLowerCase().contains(charSequence.toString().toLowerCase())) {
+                        filteredList.add(checkList);
                 }
             }
+         }
 
             FilterResults filterResults = new FilterResults();
             filterResults.values = filteredList;

@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 public class CheckList implements Serializable {
 
-    private int id;
     private String data;
     private String hora;
     private String saidaRetorno;
@@ -70,10 +69,6 @@ public class CheckList implements Serializable {
     }
 
     public CheckList() {
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getData() {
@@ -179,7 +174,6 @@ public class CheckList implements Serializable {
     public String getFreioDeEstacionamento() {
         return freioDeEstacionamento;
     }
-
 }
 
 

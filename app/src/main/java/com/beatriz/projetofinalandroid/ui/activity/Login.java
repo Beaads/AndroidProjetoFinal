@@ -63,7 +63,6 @@ public class Login extends AppCompatActivity {
                 if (Login.getText().toString().equals("prolog") && Senha.getText().toString().equals("1234")) {
                     vaiParaListaCheckList();
                 }
-
             }
         });
     }

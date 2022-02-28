@@ -1,6 +1,5 @@
 package com.beatriz.projetofinalandroid.ui.activity;
 
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,7 +23,7 @@ import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class MainActivity extends AppCompatActivity {
+public class CriaCheckList extends AppCompatActivity {
 
     RestClient restClient = new RestClient();
     public CheckList check = new CheckList();
@@ -55,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.cria_checklist);
         BotaoSalvaChecklist();
 
         Intent dadosRecebidos = getIntent();
@@ -102,190 +101,209 @@ public class MainActivity extends AppCompatActivity {
             RadioButton selTracaoNOk = findViewById(R.id.TracaoNOK);
             selTracaoOk.setEnabled(false);
             selTracaoNOk.setEnabled(false);
-            if (checkRecebido.getTracao().equals("OK")) selTracaoOk.setChecked(true);
-            else selTracaoNOk.setChecked(true);
+            if (checkRecebido.getTracao().equals("OK")) {
+                selTracaoOk.setChecked(true);
+            } else { selTracaoNOk.setChecked(true);
+            }
 
             RadioButton selRodoarOk = findViewById(R.id.RodoarOK);
             RadioButton selRodoarNOk = findViewById(R.id.RodoarNOK);
             selRodoarOk.setEnabled(false);
             selRodoarNOk.setEnabled(false);
-            if (checkRecebido.getRodoar().equals("OK")) selRodoarOk.setChecked(true);
-            else selRodoarNOk.setChecked(true);
+            if (checkRecebido.getRodoar().equals("OK")) {
+                selRodoarOk.setChecked(true);
+            } else { selRodoarNOk.setChecked(true);
+            }
 
             RadioButton selCalibragemOk = findViewById(R.id.CalibragemPneusOK);
             RadioButton selCalibragemNOk = findViewById(R.id.CalibragemPneusNOK);
             selCalibragemOk.setEnabled(false);
             selCalibragemNOk.setEnabled(false);
-            if (checkRecebido.getCalibragemPneus().equals("OK")) selCalibragemOk.setChecked(true);
-            else selCalibragemNOk.setChecked(true);
+            if (checkRecebido.getCalibragemPneus().equals("OK")) {
+                selCalibragemOk.setChecked(true);
+            } else { selCalibragemNOk.setChecked(true);
+            }
 
             RadioButton selEstepeOk = findViewById(R.id.EstepeOK);
             RadioButton selEstepeNOk = findViewById(R.id.EstepeNOK);
             selEstepeOk.setEnabled(false);
             selEstepeNOk.setEnabled(false);
-            if (checkRecebido.getEstepe().equals("OK")) selEstepeOk.setChecked(true);
-            else selEstepeNOk.setChecked(true);
+            if (checkRecebido.getEstepe().equals("OK")) {
+                selEstepeOk.setChecked(true);
+            } else { selEstepeNOk.setChecked(true);
+            }
 
             RadioButton selFreioDianteiroOk = findViewById(R.id.FreioDianteiroOK);
             RadioButton selFreioDianteiroNOk = findViewById(R.id.FreioDianteiroNOK);
             selFreioDianteiroOk.setEnabled(false);
             selFreioDianteiroNOk.setEnabled(false);
-            if (checkRecebido.getFreioDianteiro().equals("OK"))
+            if (checkRecebido.getFreioDianteiro().equals("OK")) {
                 selFreioDianteiroOk.setChecked(true);
-            else selFreioDianteiroNOk.setChecked(true);
+            } else { selFreioDianteiroNOk.setChecked(true);
+            }
 
             RadioButton selFreioTraseiroOk = findViewById(R.id.FreioTraseiroOK);
             RadioButton selFreioTraseiroNOk = findViewById(R.id.FreioTraseiroNOK);
             selFreioTraseiroOk.setEnabled(false);
             selFreioTraseiroNOk.setEnabled(false);
-            if (checkRecebido.getFreioTraseiro().equals("OK"))
+            if (checkRecebido.getFreioTraseiro().equals("OK")) {
                 selFreioTraseiroOk.setChecked(true);
-            else selFreioTraseiroNOk.setChecked(true);
+            } else { selFreioTraseiroNOk.setChecked(true);
+            }
 
             RadioButton selAmortecedorOK = findViewById(R.id.AmortcedorOK);
             RadioButton selAmortecedorNOk = findViewById(R.id.AmortecedorNOK);
             selAmortecedorOK.setEnabled(false);
             selAmortecedorNOk.setEnabled(false);
-            if (checkRecebido.getAmortecedor().equals("OK"))
+            if (checkRecebido.getAmortecedor().equals("OK")) {
                 selAmortecedorOK.setChecked(true);
-            else selAmortecedorNOk.setChecked(true);
+            } else { selAmortecedorNOk.setChecked(true);
+            }
 
             RadioButton selMolasOk = findViewById(R.id.MolasOK);
             RadioButton selMolasNOk = findViewById(R.id.MolasNOK);
             selMolasOk.setEnabled(false);
             selMolasNOk.setEnabled(false);
-            if (checkRecebido.getMolas().equals("OK"))
+            if (checkRecebido.getMolas().equals("OK")) {
                 selMolasOk.setChecked(true);
-            else selMolasNOk.setChecked(true);
+            } else { selMolasNOk.setChecked(true);
+            }
 
             RadioButton selCambioOLeoOk = findViewById(R.id.CambioOleoOK);
             RadioButton selCambioOLeoNOk = findViewById(R.id.CambioOleoNOK);
             selCambioOLeoOk.setEnabled(false);
             selCambioOLeoNOk.setEnabled(false);
-            if (checkRecebido.getCambioOleo().equals("OK"))
+            if (checkRecebido.getCambioOleo().equals("OK")) {
                 selCambioOLeoOk.setChecked(true);
-            else selCambioOLeoNOk.setChecked(true);
+            } else { selCambioOLeoNOk.setChecked(true);
+            }
 
             RadioButton selDirecaoOleoOk = findViewById(R.id.DirecaoOleoOK);
             RadioButton selDirecaoOleoNOk = findViewById(R.id.DirecaoOleoNOK);
             selDirecaoOleoOk.setEnabled(false);
             selDirecaoOleoNOk.setEnabled(false);
-            if (checkRecebido.getDirecaoOleo().equals("OK"))
+            if (checkRecebido.getDirecaoOleo().equals("OK")) {
                 selDirecaoOleoOk.setChecked(true);
-            else selDirecaoOleoNOk.setChecked(true);
+            } else { selDirecaoOleoNOk.setChecked(true);
+            }
 
             RadioButton selLimpezaRadiadorAguaOk = findViewById(R.id.LimpezaRadiadorAguaOK);
             RadioButton selLimpezaRadiadorAguaNOk = findViewById(R.id.LimpezaRadiadorAguaNOK);
             selLimpezaRadiadorAguaOk.setEnabled(false);
             selLimpezaRadiadorAguaNOk.setEnabled(false);
-            if (checkRecebido.getLimpezaRadiadorAgua().equals("OK"))
+            if (checkRecebido.getLimpezaRadiadorAgua().equals("OK")) {
                 selLimpezaRadiadorAguaOk.setChecked(true);
-            else selLimpezaRadiadorAguaNOk.setChecked(true);
+            } else { selLimpezaRadiadorAguaNOk.setChecked(true);
+            }
 
             RadioButton selOleoMotorOk = findViewById(R.id.OleoMotorOK);
             RadioButton selOleoMotorNOk = findViewById(R.id.OleoMotorNOK);
             selOleoMotorOk.setEnabled(false);
             selOleoMotorNOk.setEnabled(false);
-            if (checkRecebido.getOleoMotor().equals("OK"))
+            if (checkRecebido.getOleoMotor().equals("OK")) {
                 selOleoMotorOk.setChecked(true);
-            else selOleoMotorNOk.setChecked(true);
+            } else { selOleoMotorNOk.setChecked(true);
+            }
 
             RadioButton selRetrovisorOk = findViewById(R.id.RetrovisorOK);
             RadioButton selRetrovisorNOk = findViewById(R.id.RetrovisorNOK);
             selRetrovisorOk.setEnabled(false);
             selRetrovisorNOk.setEnabled(false);
-            if (checkRecebido.getRetrovisor().equals("OK"))
+            if (checkRecebido.getRetrovisor().equals("OK")) {
                 selRetrovisorOk.setChecked(true);
-            else selRetrovisorNOk.setChecked(true);
+            } else { selRetrovisorNOk.setChecked(true);
+            }
 
             RadioButton selParaBrisaOk = findViewById(R.id.paraBrisaOK);
             RadioButton selParaBrisaNOk = findViewById(R.id.paraBrisaNOK);
             selParaBrisaOk.setEnabled(false);
             selParaBrisaNOk.setEnabled(false);
-            if (checkRecebido.getParaBrisa().equals("OK"))
+            if (checkRecebido.getParaBrisa().equals("OK")) {
                 selParaBrisaOk.setChecked(true);
-            else selParaBrisaNOk.setChecked(true);
+            } else { selParaBrisaNOk.setChecked(true);
+            }
 
             RadioButton selParaChoqueDianteiroOk = findViewById(R.id.paraChoqueDianteiroOK);
             RadioButton selParaChoqueDianteiroNOk = findViewById(R.id.paraChoqueDianteiroNOK);
             selParaChoqueDianteiroOk.setEnabled(false);
             selParaChoqueDianteiroNOk.setEnabled(false);
-            if (checkRecebido.getParaChoqueDianteiro().equals("OK"))
+            if (checkRecebido.getParaChoqueDianteiro().equals("OK")) {
                 selParaChoqueDianteiroOk.setChecked(true);
-            else selParaChoqueDianteiroNOk.setChecked(true);
+            } else { selParaChoqueDianteiroNOk.setChecked(true);
+            }
 
             RadioButton selParaChoqueTraseiroOk = findViewById(R.id.paraChoqueTraseiroOK);
             RadioButton selParaChoqueTraseiroNOk = findViewById(R.id.paraChoqueTraseiroNOK);
             selParaChoqueTraseiroOk.setEnabled(false);
             selParaChoqueTraseiroNOk.setEnabled(false);
-            if (checkRecebido.getParaChoqueTraseiro().equals("OK"))
+            if (checkRecebido.getParaChoqueTraseiro().equals("OK")) {
                 selParaChoqueTraseiroOk.setChecked(true);
-            else selParaChoqueTraseiroNOk.setChecked(true);
+            } else { selParaChoqueTraseiroNOk.setChecked(true);
+            }
 
             RadioButton selEstofamentoOk = findViewById(R.id.estofamentoOK);
             RadioButton selEstofamentoNOk = findViewById(R.id.estofamentoNOK);
             selEstofamentoOk.setEnabled(false);
             selEstofamentoNOk.setEnabled(false);
-            if (checkRecebido.getEstofamento().equals("OK"))
+            if (checkRecebido.getEstofamento().equals("OK")) {
                 selEstofamentoOk.setChecked(true);
-            else selEstofamentoNOk.setChecked(true);
+            } else { selEstofamentoNOk.setChecked(true);
+            }
 
             RadioButton selCortinasOk = findViewById(R.id.cortinasOK);
             RadioButton selCortinasNOk = findViewById(R.id.cortinasNOK);
             selCortinasOk.setEnabled(false);
             selCortinasNOk.setEnabled(false);
-            if (checkRecebido.getCortinas().equals("OK"))
+            if (checkRecebido.getCortinas().equals("OK")) {
                 selCortinasOk.setChecked(true);
-            else selCortinasNOk.setChecked(true);
+            } else { selCortinasNOk.setChecked(true);
+            }
 
             RadioButton selCintoDeSegurancaOk = findViewById(R.id.cintoDeSegurancaOK);
             RadioButton selCintoDeSegurancaNOk = findViewById(R.id.cintoDeSegurancaNOK);
             selCintoDeSegurancaOk.setEnabled(false);
             selCintoDeSegurancaNOk.setEnabled(false);
-            if (checkRecebido.getCintoDeSeguranca().equals("OK"))
+            if (checkRecebido.getCintoDeSeguranca().equals("OK")) {
                 selCintoDeSegurancaOk.setChecked(true);
-            else selCintoDeSegurancaNOk.setChecked(true);
+            } else { selCintoDeSegurancaNOk.setChecked(true);
+            }
 
             RadioButton selFreioDeEstacionamentoOk = findViewById(R.id.freioDeEstacionamentoOK);
             RadioButton selFreioDeEstacionamentoNOk = findViewById(R.id.freioDeEstacionamentoNOK);
             selFreioDeEstacionamentoOk.setEnabled(false);
             selFreioDeEstacionamentoNOk.setEnabled(false);
-            if (checkRecebido.getFreioDeEstacionamento().equals("OK"))
+            if (checkRecebido.getFreioDeEstacionamento().equals("OK")) {
                 selFreioDeEstacionamentoOk.setChecked(true);
-            else selFreioDeEstacionamentoNOk.setChecked(true);
-
+            } else { selFreioDeEstacionamentoNOk.setChecked(true);
+            }
             return;
-
         }
         setTitle("Novo CheckList");
-
-}
+    }
 
     public void adicionaCheck() {
-        if (criaCheckList().getId() == 0) {
-            CheckList checkListCriado = criaCheckList();
-            Observable<CheckList> observable = restClient.getRetrofit()
-                    .create(CheckListService.class).salva(checkListCriado);
-            observable
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(new Observer<CheckList>() {
-                        @Override
-                        public void onCompleted() {
-                            finish();
-                        }
+        CheckList checkListCriado = criaCheckList();
+        Observable<CheckList> observable = restClient.getRetrofit()
+                .create(CheckListService.class).salva(checkListCriado);
+        observable
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<CheckList>() {
+                    @Override
+                    public void onCompleted() {
+                        finish();
+                    }
 
-                        @Override
-                        public void onError(Throwable e) {
-                            Toast.makeText(MainActivity.this, "Erro ao criar " +
-                                    e.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
+                    @Override
+                    public void onError(Throwable e) {
+                        Toast.makeText(CriaCheckList.this, "Erro ao criar " +
+                                e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
 
-                        @Override
-                        public void onNext(CheckList checklist) {
-                        }
-                    });
-        }
+                    @Override
+                    public void onNext(CheckList checklist) {
+                    }
+                });
     }
 
     private void BotaoSalvaChecklist() {
@@ -321,11 +339,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                EditText selData = findViewById(R.id.data);
-                EditText selPlaca = findViewById(R.id.placa);
-                EditText selHora = findViewById(R.id.hora);
-                EditText selMotorista = findViewById(R.id.motorista);
-                EditText selKmVeiculo = findViewById(R.id.kmveiculo);
                 RadioButton selSaidaRetorno = findViewById(R.id.retorno);
                 RadioButton selTracao = findViewById(R.id.TracaoNOK);
                 RadioButton selRodoar = findViewById(R.id.RodoarNOK);
@@ -370,7 +383,7 @@ public class MainActivity extends AppCompatActivity {
                 selCintoDeSeguranca.setError(null);
                 selFreioDeEstacionamento.setError(null);
 
-                if (    Data.getText().toString().length() == 0 ||
+                if (Data.getText().toString().length() == 0 ||
                         Placa.getText().toString().length() == 0 ||
                         Hora.getText().toString().length() == 0 ||
                         Motorista.getText().toString().length() == 0 ||
@@ -397,23 +410,23 @@ public class MainActivity extends AppCompatActivity {
                         RadiocintoDeSegurancaOKNOK.getCheckedRadioButtonId() == -1 ||
                         RadiofreioDeEstacionamentoOKNOK.getCheckedRadioButtonId() == -1) {
 
-                    Toast.makeText(MainActivity.this, "Erro, responda " +
+                    Toast.makeText(CriaCheckList.this, "Erro, responda " +
                             "todos os campos.", Toast.LENGTH_SHORT).show();
 
-                    if(Data.getText().toString().length() == 0){
-                        selData.setError("Preencha este campo");
+                    if (Data.getText().toString().length() == 0) {
+                        Data.setError("Preencha este campo");
                     }
-                    if(Placa.getText().toString().length() == 0){
-                        selPlaca.setError("Preencha este campo");
+                    if (Placa.getText().toString().length() == 0) {
+                        Placa.setError("Preencha este campo");
                     }
-                    if(Hora.getText().toString().length() == 0){
-                        selHora.setError("Preencha este campo");
+                    if (Hora.getText().toString().length() == 0) {
+                        Hora.setError("Preencha este campo");
                     }
-                    if(Motorista.getText().toString().length() == 0){
-                        selMotorista.setError("Preencha este campo");
+                    if (Motorista.getText().toString().length() == 0) {
+                        Motorista.setError("Preencha este campo");
                     }
-                    if(KmVeiculo.getText().toString().length() == 0){
-                        selKmVeiculo.setError("Preencha este campo");
+                    if (KmVeiculo.getText().toString().length() == 0) {
+                        KmVeiculo.setError("Preencha este campo");
                     }
                     if (RadioSaidaretorno.getCheckedRadioButtonId() == -1) {
                         selSaidaRetorno.setError("*");

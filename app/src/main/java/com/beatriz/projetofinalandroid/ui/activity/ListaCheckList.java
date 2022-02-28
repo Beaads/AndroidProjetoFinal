@@ -55,7 +55,7 @@ public class ListaCheckList extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                    return false;
+                return false;
             }
 
             @Override
@@ -93,13 +93,13 @@ public class ListaCheckList extends AppCompatActivity {
 
     private void botaoNovoChecklist() {
         FloatingActionButton botaoNovoChecklist = findViewById(R.id.lista_insere_checklist);
-        botaoNovoChecklist.setOnClickListener(view -> vaiParaActivityMainActivity());
+        botaoNovoChecklist.setOnClickListener(view -> vaiParaActivityCriaCheckList());
     }
 
-    private void vaiParaActivityMainActivity() {
+    private void vaiParaActivityCriaCheckList() {
         Intent iniciaActivityMain =
                 new Intent(ListaCheckList.this,
-                        MainActivity.class);
+                        CriaCheckList.class);
         startActivityIfNeeded(iniciaActivityMain, 1);
     }
 
@@ -114,8 +114,8 @@ public class ListaCheckList extends AppCompatActivity {
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(CheckList checkList, int position) {
-
-                Intent abreMaincomCheck = new Intent(ListaCheckList.this, MainActivity.class);
+                Intent abreMaincomCheck = new Intent(ListaCheckList.this,
+                        CriaCheckList.class);
                 abreMaincomCheck.putExtra("checklist", checkList);
                 abreMaincomCheck.putExtra("posicao", position);
                 startActivityIfNeeded(abreMaincomCheck, 2);
