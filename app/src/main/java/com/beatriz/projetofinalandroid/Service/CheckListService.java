@@ -11,7 +11,7 @@ import rx.Observable;
 
 public interface CheckListService {
 
-    public static final String BASE_URL = "http://192.168.0.4:8080/";
+    public static final String BASE_URL = "http://192.168.0.136:8080/";
 
     @GET("checklist/")
     Observable<List<CheckList>> getChecklists();

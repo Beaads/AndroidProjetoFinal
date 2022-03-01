@@ -59,22 +59,23 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> i
 
     Filter filter = new Filter() {
 
-    @Override
-    protected FilterResults performFiltering(CharSequence charSequence) {
-         ArrayList<CheckList> filteredList = new ArrayList<>();
-         if (charSequence.toString().isEmpty()) {
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+            ArrayList<CheckList> filteredList = new ArrayList<>();
+            if (charSequence.toString().isEmpty()) {
                 filteredList.addAll(checkListAll);
-         } else {
-            for (CheckList checkList : checkListAll) {
-                if (checkList.getMotorista().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
-                     checkList.getData().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
-                     checkList.getPlaca().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
-                     checkList.getHora().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
-                     checkList.getSaidaRetorno().toLowerCase().contains(charSequence.toString().toLowerCase())) {
+            } else {
+                for (CheckList checkList : checkListAll) {
+                    if (checkList.getKmVeiculo().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
+                            checkList.getMotorista().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
+                            checkList.getData().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
+                            checkList.getPlaca().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
+                            checkList.getHora().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
+                            checkList.getSaidaRetorno().toLowerCase().contains(charSequence.toString().toLowerCase())) {
                         filteredList.add(checkList);
+                    }
                 }
             }
-         }
 
             FilterResults filterResults = new FilterResults();
             filterResults.values = filteredList;
