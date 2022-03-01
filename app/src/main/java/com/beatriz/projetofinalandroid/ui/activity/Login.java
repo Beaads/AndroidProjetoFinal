@@ -42,26 +42,20 @@ public class Login extends AppCompatActivity {
                 EditText selSenha = findViewById(R.id.Senha);
 
                 if (Login.getText().toString().length() == 0 && Senha.getText().toString().length() == 0) {
+                    selLogin.setError("*");
+                    selSenha.setError("*");
                     Toast.makeText(Login.this, "Preencha as informações",
                             Toast.LENGTH_SHORT).show();
-                }
-
-                if (!Login.getText().toString().equals("prolog") && !Senha.getText().toString().equals("1234")) {
-                    selLogin.setError("*");
-                    selSenha.setError("*");
-                    Toast.makeText(Login.this, "Login e/ou senha incorretos",
-                            Toast.LENGTH_SHORT).show();
-                }
-
-                if (!Login.getText().toString().equals("prolog") || !Senha.getText().toString().equals("1234")) {
-                    selLogin.setError("*");
-                    selSenha.setError("*");
-                    Toast.makeText(Login.this, "Login e/ou senha incorretos",
-                            Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
                 if (Login.getText().toString().equals("prolog") && Senha.getText().toString().equals("1234")) {
                     vaiParaListaCheckList();
+                } else {
+                    selLogin.setError("*");
+                    selSenha.setError("*");
+                    Toast.makeText(Login.this, "Login e/ou senha incorretos",
+                            Toast.LENGTH_SHORT).show();
                 }
             }
         });
