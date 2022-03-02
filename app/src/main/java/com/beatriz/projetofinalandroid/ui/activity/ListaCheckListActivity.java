@@ -15,7 +15,6 @@ import com.beatriz.projetofinalandroid.Service.CheckListService;
 import com.beatriz.projetofinalandroid.model.CheckList;
 import com.beatriz.projetofinalandroid.retrofit.RestClient;
 import com.beatriz.projetofinalandroid.ui.recyclerview.adapter.Adapter;
-import com.beatriz.projetofinalandroid.ui.recyclerview.adapter.OnItemClickListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
@@ -24,11 +23,11 @@ import rx.Observable;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
+import rx.subscriptions.CompositeSubscription;
 
-public class ListaCheckList extends AppCompatActivity {
-
-    RestClient restClient = new RestClient();
+public class ListaCheckListActivity extends AppCompatActivity {
     private Adapter adapter;
+    private CompositeSubscription subscription = new CompositeSubscription();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +35,7 @@ public class ListaCheckList extends AppCompatActivity {
         setContentView(R.layout.lista_checklist);
         setTitle("CheckLists");
         getTodosCheckList();
-        botaoNovoChecklist();
+        configuraBotaoNovoChecklist();
     }
 
     @Override
@@ -44,7 +43,14 @@ public class ListaCheckList extends AppCompatActivity {
         super.onRestart();
         setContentView(R.layout.lista_checklist);
         getTodosCheckList();
-        botaoNovoChecklist();
+        configuraBotaoNovoChecklist();
+    }
+
+    @Override
+    protected void onDestroy() {
+        subscription.unsubscribe();
+        subscription = null;
+        super.onDestroy();
     }
 
     @Override
@@ -68,38 +74,33 @@ public class ListaCheckList extends AppCompatActivity {
     }
 
     public void getTodosCheckList() {
-        Observable<List<CheckList>> observable = restClient.getRetrofit().create
-                (CheckListService.class).getChecklists();
-        observable
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<List<CheckList>>() {
-                    @Override
-                    public void onCompleted() {
-                    }
+        Observable<List<CheckList>> observable =
+                RestClient.getRetrofit().create(CheckListService.class).getChecklists();
+        subscription.add(
+                observable
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(new Observer<List<CheckList>>() {
+                            @Override
+                            public void onCompleted() {
+                            }
 
-                    @Override
-                    public void onError(Throwable e) {
-                        Toast.makeText(ListaCheckList.this, "Erro: " +
-                                e.getMessage(), Toast.LENGTH_LONG).show();
-                    }
+                            @Override
+                            public void onError(Throwable e) {
+                                Toast.makeText(ListaCheckListActivity.this, "Erro: " +
+                                        e.getMessage(), Toast.LENGTH_LONG).show();
+                            }
 
-                    @Override
-                    public void onNext(List<CheckList> checkLists) {
-                        configuraRecyclerView(checkLists);
-                    }
-                });
-    }
-
-    private void botaoNovoChecklist() {
-        FloatingActionButton botaoNovoChecklist = findViewById(R.id.lista_insere_checklist);
-        botaoNovoChecklist.setOnClickListener(view -> vaiParaActivityCriaCheckList());
+                            @Override
+                            public void onNext(List<CheckList> checkLists) {
+                                configuraRecyclerView(checkLists);
+                            }
+                        }));
     }
 
     private void vaiParaActivityCriaCheckList() {
         Intent iniciaActivityMain =
-                new Intent(ListaCheckList.this,
-                        CriaCheckList.class);
+                new Intent(ListaCheckListActivity.this, CriaCheckListActivity.class);
         startActivityIfNeeded(iniciaActivityMain, 1);
     }
 
@@ -108,18 +109,20 @@ public class ListaCheckList extends AppCompatActivity {
         configuraAdapter(todosCheck, listaCheck);
     }
 
-    private void configuraAdapter(List<CheckList> todosCheck, RecyclerView listaChecks) {
+    private void configuraBotaoNovoChecklist() {
+        FloatingActionButton botaoNovoChecklist = findViewById(R.id.lista_insere_checklist);
+        botaoNovoChecklist.setOnClickListener(view -> vaiParaActivityCriaCheckList());
+    }
+
+    private void configuraAdapter(List<CheckList> todosCheck, RecyclerView recyclerView) {
         adapter = new Adapter(this, todosCheck);
-        listaChecks.setAdapter(adapter);
-        adapter.setOnItemClickListener(new OnItemClickListener() {
-            @Override
-            public void onItemClick(CheckList checkList, int position) {
-                Intent abreMaincomCheck = new Intent(ListaCheckList.this,
-                        CriaCheckList.class);
-                abreMaincomCheck.putExtra("checklist", checkList);
-                abreMaincomCheck.putExtra("posicao", position);
-                startActivityIfNeeded(abreMaincomCheck, 2);
-            }
+        recyclerView.setAdapter(adapter);
+        adapter.setOnItemClickListener((checkList, position) -> {
+            Intent checklistActivity = new Intent(ListaCheckListActivity.this,
+                    CriaCheckListActivity.class);
+            checklistActivity.putExtra("checklist", checkList);
+            checklistActivity.putExtra("posicao", position);
+            startActivityIfNeeded(checklistActivity, 2);
         });
     }
 }

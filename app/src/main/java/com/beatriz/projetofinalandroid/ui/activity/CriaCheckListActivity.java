@@ -22,10 +22,10 @@ import rx.Observable;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
+import rx.subscriptions.CompositeSubscription;
 
-public class CriaCheckList extends AppCompatActivity {
-
-    RestClient restClient = new RestClient();
+public class CriaCheckListActivity extends AppCompatActivity {
+    private CompositeSubscription subscription = new CompositeSubscription();
     public CheckList check = new CheckList();
 
     Button btnSalvar;
@@ -103,7 +103,8 @@ public class CriaCheckList extends AppCompatActivity {
             selTracaoNOk.setEnabled(false);
             if (checkRecebido.getTracao().equals("OK")) {
                 selTracaoOk.setChecked(true);
-            } else { selTracaoNOk.setChecked(true);
+            } else {
+                selTracaoNOk.setChecked(true);
             }
 
             RadioButton selRodoarOk = findViewById(R.id.RodoarOK);
@@ -112,7 +113,8 @@ public class CriaCheckList extends AppCompatActivity {
             selRodoarNOk.setEnabled(false);
             if (checkRecebido.getRodoar().equals("OK")) {
                 selRodoarOk.setChecked(true);
-            } else { selRodoarNOk.setChecked(true);
+            } else {
+                selRodoarNOk.setChecked(true);
             }
 
             RadioButton selCalibragemOk = findViewById(R.id.CalibragemPneusOK);
@@ -121,7 +123,8 @@ public class CriaCheckList extends AppCompatActivity {
             selCalibragemNOk.setEnabled(false);
             if (checkRecebido.getCalibragemPneus().equals("OK")) {
                 selCalibragemOk.setChecked(true);
-            } else { selCalibragemNOk.setChecked(true);
+            } else {
+                selCalibragemNOk.setChecked(true);
             }
 
             RadioButton selEstepeOk = findViewById(R.id.EstepeOK);
@@ -130,7 +133,8 @@ public class CriaCheckList extends AppCompatActivity {
             selEstepeNOk.setEnabled(false);
             if (checkRecebido.getEstepe().equals("OK")) {
                 selEstepeOk.setChecked(true);
-            } else { selEstepeNOk.setChecked(true);
+            } else {
+                selEstepeNOk.setChecked(true);
             }
 
             RadioButton selFreioDianteiroOk = findViewById(R.id.FreioDianteiroOK);
@@ -139,7 +143,8 @@ public class CriaCheckList extends AppCompatActivity {
             selFreioDianteiroNOk.setEnabled(false);
             if (checkRecebido.getFreioDianteiro().equals("OK")) {
                 selFreioDianteiroOk.setChecked(true);
-            } else { selFreioDianteiroNOk.setChecked(true);
+            } else {
+                selFreioDianteiroNOk.setChecked(true);
             }
 
             RadioButton selFreioTraseiroOk = findViewById(R.id.FreioTraseiroOK);
@@ -148,7 +153,8 @@ public class CriaCheckList extends AppCompatActivity {
             selFreioTraseiroNOk.setEnabled(false);
             if (checkRecebido.getFreioTraseiro().equals("OK")) {
                 selFreioTraseiroOk.setChecked(true);
-            } else { selFreioTraseiroNOk.setChecked(true);
+            } else {
+                selFreioTraseiroNOk.setChecked(true);
             }
 
             RadioButton selAmortecedorOK = findViewById(R.id.AmortcedorOK);
@@ -157,7 +163,8 @@ public class CriaCheckList extends AppCompatActivity {
             selAmortecedorNOk.setEnabled(false);
             if (checkRecebido.getAmortecedor().equals("OK")) {
                 selAmortecedorOK.setChecked(true);
-            } else { selAmortecedorNOk.setChecked(true);
+            } else {
+                selAmortecedorNOk.setChecked(true);
             }
 
             RadioButton selMolasOk = findViewById(R.id.MolasOK);
@@ -166,7 +173,8 @@ public class CriaCheckList extends AppCompatActivity {
             selMolasNOk.setEnabled(false);
             if (checkRecebido.getMolas().equals("OK")) {
                 selMolasOk.setChecked(true);
-            } else { selMolasNOk.setChecked(true);
+            } else {
+                selMolasNOk.setChecked(true);
             }
 
             RadioButton selCambioOLeoOk = findViewById(R.id.CambioOleoOK);
@@ -175,7 +183,8 @@ public class CriaCheckList extends AppCompatActivity {
             selCambioOLeoNOk.setEnabled(false);
             if (checkRecebido.getCambioOleo().equals("OK")) {
                 selCambioOLeoOk.setChecked(true);
-            } else { selCambioOLeoNOk.setChecked(true);
+            } else {
+                selCambioOLeoNOk.setChecked(true);
             }
 
             RadioButton selDirecaoOleoOk = findViewById(R.id.DirecaoOleoOK);
@@ -184,7 +193,8 @@ public class CriaCheckList extends AppCompatActivity {
             selDirecaoOleoNOk.setEnabled(false);
             if (checkRecebido.getDirecaoOleo().equals("OK")) {
                 selDirecaoOleoOk.setChecked(true);
-            } else { selDirecaoOleoNOk.setChecked(true);
+            } else {
+                selDirecaoOleoNOk.setChecked(true);
             }
 
             RadioButton selLimpezaRadiadorAguaOk = findViewById(R.id.LimpezaRadiadorAguaOK);
@@ -193,7 +203,8 @@ public class CriaCheckList extends AppCompatActivity {
             selLimpezaRadiadorAguaNOk.setEnabled(false);
             if (checkRecebido.getLimpezaRadiadorAgua().equals("OK")) {
                 selLimpezaRadiadorAguaOk.setChecked(true);
-            } else { selLimpezaRadiadorAguaNOk.setChecked(true);
+            } else {
+                selLimpezaRadiadorAguaNOk.setChecked(true);
             }
 
             RadioButton selOleoMotorOk = findViewById(R.id.OleoMotorOK);
@@ -202,7 +213,8 @@ public class CriaCheckList extends AppCompatActivity {
             selOleoMotorNOk.setEnabled(false);
             if (checkRecebido.getOleoMotor().equals("OK")) {
                 selOleoMotorOk.setChecked(true);
-            } else { selOleoMotorNOk.setChecked(true);
+            } else {
+                selOleoMotorNOk.setChecked(true);
             }
 
             RadioButton selRetrovisorOk = findViewById(R.id.RetrovisorOK);
@@ -211,7 +223,8 @@ public class CriaCheckList extends AppCompatActivity {
             selRetrovisorNOk.setEnabled(false);
             if (checkRecebido.getRetrovisor().equals("OK")) {
                 selRetrovisorOk.setChecked(true);
-            } else { selRetrovisorNOk.setChecked(true);
+            } else {
+                selRetrovisorNOk.setChecked(true);
             }
 
             RadioButton selParaBrisaOk = findViewById(R.id.paraBrisaOK);
@@ -220,7 +233,8 @@ public class CriaCheckList extends AppCompatActivity {
             selParaBrisaNOk.setEnabled(false);
             if (checkRecebido.getParaBrisa().equals("OK")) {
                 selParaBrisaOk.setChecked(true);
-            } else { selParaBrisaNOk.setChecked(true);
+            } else {
+                selParaBrisaNOk.setChecked(true);
             }
 
             RadioButton selParaChoqueDianteiroOk = findViewById(R.id.paraChoqueDianteiroOK);
@@ -229,7 +243,8 @@ public class CriaCheckList extends AppCompatActivity {
             selParaChoqueDianteiroNOk.setEnabled(false);
             if (checkRecebido.getParaChoqueDianteiro().equals("OK")) {
                 selParaChoqueDianteiroOk.setChecked(true);
-            } else { selParaChoqueDianteiroNOk.setChecked(true);
+            } else {
+                selParaChoqueDianteiroNOk.setChecked(true);
             }
 
             RadioButton selParaChoqueTraseiroOk = findViewById(R.id.paraChoqueTraseiroOK);
@@ -238,7 +253,8 @@ public class CriaCheckList extends AppCompatActivity {
             selParaChoqueTraseiroNOk.setEnabled(false);
             if (checkRecebido.getParaChoqueTraseiro().equals("OK")) {
                 selParaChoqueTraseiroOk.setChecked(true);
-            } else { selParaChoqueTraseiroNOk.setChecked(true);
+            } else {
+                selParaChoqueTraseiroNOk.setChecked(true);
             }
 
             RadioButton selEstofamentoOk = findViewById(R.id.estofamentoOK);
@@ -247,7 +263,8 @@ public class CriaCheckList extends AppCompatActivity {
             selEstofamentoNOk.setEnabled(false);
             if (checkRecebido.getEstofamento().equals("OK")) {
                 selEstofamentoOk.setChecked(true);
-            } else { selEstofamentoNOk.setChecked(true);
+            } else {
+                selEstofamentoNOk.setChecked(true);
             }
 
             RadioButton selCortinasOk = findViewById(R.id.cortinasOK);
@@ -256,7 +273,8 @@ public class CriaCheckList extends AppCompatActivity {
             selCortinasNOk.setEnabled(false);
             if (checkRecebido.getCortinas().equals("OK")) {
                 selCortinasOk.setChecked(true);
-            } else { selCortinasNOk.setChecked(true);
+            } else {
+                selCortinasNOk.setChecked(true);
             }
 
             RadioButton selCintoDeSegurancaOk = findViewById(R.id.cintoDeSegurancaOK);
@@ -265,7 +283,8 @@ public class CriaCheckList extends AppCompatActivity {
             selCintoDeSegurancaNOk.setEnabled(false);
             if (checkRecebido.getCintoDeSeguranca().equals("OK")) {
                 selCintoDeSegurancaOk.setChecked(true);
-            } else { selCintoDeSegurancaNOk.setChecked(true);
+            } else {
+                selCintoDeSegurancaNOk.setChecked(true);
             }
 
             RadioButton selFreioDeEstacionamentoOk = findViewById(R.id.freioDeEstacionamentoOK);
@@ -274,36 +293,46 @@ public class CriaCheckList extends AppCompatActivity {
             selFreioDeEstacionamentoNOk.setEnabled(false);
             if (checkRecebido.getFreioDeEstacionamento().equals("OK")) {
                 selFreioDeEstacionamentoOk.setChecked(true);
-            } else { selFreioDeEstacionamentoNOk.setChecked(true);
+            } else {
+                selFreioDeEstacionamentoNOk.setChecked(true);
             }
             return;
         }
         setTitle("Novo CheckList");
     }
 
+    @Override
+    protected void onDestroy() {
+        subscription.unsubscribe();
+        subscription = null;
+        super.onDestroy();
+    }
+
     public void adicionaCheck() {
         CheckList checkListCriado = criaCheckList();
-        Observable<CheckList> observable = restClient.getRetrofit()
+        Observable<CheckList> observable = RestClient.getRetrofit()
                 .create(CheckListService.class).salva(checkListCriado);
-        observable
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<CheckList>() {
-                    @Override
-                    public void onCompleted() {
-                        finish();
-                    }
+        subscription.add(
+                observable
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(new Observer<CheckList>() {
+                            @Override
+                            public void onCompleted() {
+                                finish();
+                            }
 
-                    @Override
-                    public void onError(Throwable e) {
-                        Toast.makeText(CriaCheckList.this, "Erro ao criar " +
-                                e.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
+                            @Override
+                            public void onError(Throwable e) {
+                                Toast.makeText(CriaCheckListActivity.this, "Erro ao criar " +
+                                        e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
 
-                    @Override
-                    public void onNext(CheckList checklist) {
-                    }
-                });
+                            @Override
+                            public void onNext(CheckList checklist) {
+                            }
+                        })
+        );
     }
 
     private void BotaoSalvaChecklist() {
@@ -335,166 +364,162 @@ public class CriaCheckList extends AppCompatActivity {
         RadiocintoDeSegurancaOKNOK = findViewById(R.id.cintoDeSegurancaOKNOK);
         RadiofreioDeEstacionamentoOKNOK = findViewById(R.id.freioDeEstacionamentoOKNOK);
 
-        btnSalvar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btnSalvar.setOnClickListener(view -> {
+            RadioButton selSaidaRetorno = findViewById(R.id.retorno);
+            RadioButton selTracao = findViewById(R.id.TracaoNOK);
+            RadioButton selRodoar = findViewById(R.id.RodoarNOK);
+            RadioButton selCalibragemPneus = findViewById(R.id.CalibragemPneusNOK);
+            RadioButton selEstepe = findViewById(R.id.EstepeNOK);
+            RadioButton selFreioDianteiro = findViewById(R.id.FreioDianteiroNOK);
+            RadioButton selFreioTraseiro = findViewById(R.id.FreioTraseiroNOK);
+            RadioButton selAmortecedor = findViewById(R.id.AmortecedorNOK);
+            RadioButton selMolas = findViewById(R.id.MolasNOK);
+            RadioButton selCambioOleo = findViewById(R.id.CambioOleoNOK);
+            RadioButton selDirecaoOleo = findViewById(R.id.DirecaoOleoNOK);
+            RadioButton selLimpezaRadiadorAgua = findViewById(R.id.LimpezaRadiadorAguaNOK);
+            RadioButton selOleoMotor = findViewById(R.id.OleoMotorNOK);
+            RadioButton selRetrovisor = findViewById(R.id.RetrovisorNOK);
+            RadioButton selParaBrisa = findViewById(R.id.paraBrisaNOK);
+            RadioButton selParaChoqueDianteiro = findViewById(R.id.paraChoqueDianteiroNOK);
+            RadioButton selParaChoqueTraseiro = findViewById(R.id.paraChoqueTraseiroNOK);
+            RadioButton selEstofamento = findViewById(R.id.estofamentoNOK);
+            RadioButton selCortinas = findViewById(R.id.cortinasNOK);
+            RadioButton selCintoDeSeguranca = findViewById(R.id.cintoDeSegurancaNOK);
+            RadioButton selFreioDeEstacionamento = findViewById(R.id.freioDeEstacionamentoNOK);
 
-                RadioButton selSaidaRetorno = findViewById(R.id.retorno);
-                RadioButton selTracao = findViewById(R.id.TracaoNOK);
-                RadioButton selRodoar = findViewById(R.id.RodoarNOK);
-                RadioButton selCalibragemPneus = findViewById(R.id.CalibragemPneusNOK);
-                RadioButton selEstepe = findViewById(R.id.EstepeNOK);
-                RadioButton selFreioDianteiro = findViewById(R.id.FreioDianteiroNOK);
-                RadioButton selFreioTraseiro = findViewById(R.id.FreioTraseiroNOK);
-                RadioButton selAmortecedor = findViewById(R.id.AmortecedorNOK);
-                RadioButton selMolas = findViewById(R.id.MolasNOK);
-                RadioButton selCambioOleo = findViewById(R.id.CambioOleoNOK);
-                RadioButton selDirecaoOleo = findViewById(R.id.DirecaoOleoNOK);
-                RadioButton selLimpezaRadiadorAgua = findViewById(R.id.LimpezaRadiadorAguaNOK);
-                RadioButton selOleoMotor = findViewById(R.id.OleoMotorNOK);
-                RadioButton selRetrovisor = findViewById(R.id.RetrovisorNOK);
-                RadioButton selParaBrisa = findViewById(R.id.paraBrisaNOK);
-                RadioButton selParaChoqueDianteiro = findViewById(R.id.paraChoqueDianteiroNOK);
-                RadioButton selParaChoqueTraseiro = findViewById(R.id.paraChoqueTraseiroNOK);
-                RadioButton selEstofamento = findViewById(R.id.estofamentoNOK);
-                RadioButton selCortinas = findViewById(R.id.cortinasNOK);
-                RadioButton selCintoDeSeguranca = findViewById(R.id.cintoDeSegurancaNOK);
-                RadioButton selFreioDeEstacionamento = findViewById(R.id.freioDeEstacionamentoNOK);
+            selSaidaRetorno.setError(null);
+            selTracao.setError(null);
+            selRodoar.setError(null);
+            selCalibragemPneus.setError(null);
+            selEstepe.setError(null);
+            selFreioDianteiro.setError(null);
+            selFreioTraseiro.setError(null);
+            selAmortecedor.setError(null);
+            selMolas.setError(null);
+            selCambioOleo.setError(null);
+            selDirecaoOleo.setError(null);
+            selLimpezaRadiadorAgua.setError(null);
+            selOleoMotor.setError(null);
+            selRetrovisor.setError(null);
+            selParaBrisa.setError(null);
+            selParaChoqueDianteiro.setError(null);
+            selParaChoqueTraseiro.setError(null);
+            selEstofamento.setError(null);
+            selCortinas.setError(null);
+            selCintoDeSeguranca.setError(null);
+            selFreioDeEstacionamento.setError(null);
 
-                selSaidaRetorno.setError(null);
-                selTracao.setError(null);
-                selRodoar.setError(null);
-                selCalibragemPneus.setError(null);
-                selEstepe.setError(null);
-                selFreioDianteiro.setError(null);
-                selFreioTraseiro.setError(null);
-                selAmortecedor.setError(null);
-                selMolas.setError(null);
-                selCambioOleo.setError(null);
-                selDirecaoOleo.setError(null);
-                selLimpezaRadiadorAgua.setError(null);
-                selOleoMotor.setError(null);
-                selRetrovisor.setError(null);
-                selParaBrisa.setError(null);
-                selParaChoqueDianteiro.setError(null);
-                selParaChoqueTraseiro.setError(null);
-                selEstofamento.setError(null);
-                selCortinas.setError(null);
-                selCintoDeSeguranca.setError(null);
-                selFreioDeEstacionamento.setError(null);
+            if (Data.getText().toString().length() == 0 ||
+                    Placa.getText().toString().length() == 0 ||
+                    Hora.getText().toString().length() == 0 ||
+                    Motorista.getText().toString().length() == 0 ||
+                    KmVeiculo.getText().toString().length() == 0 ||
+                    RadioSaidaretorno.getCheckedRadioButtonId() == -1 ||
+                    RadioTracaoOKNOK.getCheckedRadioButtonId() == -1 ||
+                    RadioRodoarOKNOK.getCheckedRadioButtonId() == -1 ||
+                    RadioCalibragemPneusOKNOK.getCheckedRadioButtonId() == -1 ||
+                    RadioEstepeOKNOK.getCheckedRadioButtonId() == -1 ||
+                    RadioFreioDianteiroOKNOK.getCheckedRadioButtonId() == -1 ||
+                    RadioFreioTraseiroOKNOK.getCheckedRadioButtonId() == -1 ||
+                    RadioAmortecedorOKNOK.getCheckedRadioButtonId() == -1 ||
+                    RadioMolasOKNOK.getCheckedRadioButtonId() == -1 ||
+                    RadioCambioOleoOKNOK.getCheckedRadioButtonId() == -1 ||
+                    RadioDirecaoOleoOKNOK.getCheckedRadioButtonId() == -1 ||
+                    RadioLimpezaRadiadorAguaOKNOK.getCheckedRadioButtonId() == -1 ||
+                    RadioOleoMotorOKNOK.getCheckedRadioButtonId() == -1 ||
+                    RadioRetrovisorOKNOK.getCheckedRadioButtonId() == -1 ||
+                    RadioParaBrisaOKNOK.getCheckedRadioButtonId() == -1 ||
+                    RadioParaChoqueDianteiroOKNOK.getCheckedRadioButtonId() == -1 ||
+                    RadioParaChoqueTraseiroOKNOK.getCheckedRadioButtonId() == -1 ||
+                    RadioestofamentoOKNOK.getCheckedRadioButtonId() == -1 ||
+                    RadiocortinasOKNOK.getCheckedRadioButtonId() == -1 ||
+                    RadiocintoDeSegurancaOKNOK.getCheckedRadioButtonId() == -1 ||
+                    RadiofreioDeEstacionamentoOKNOK.getCheckedRadioButtonId() == -1) {
 
-                if (Data.getText().toString().length() == 0 ||
-                        Placa.getText().toString().length() == 0 ||
-                        Hora.getText().toString().length() == 0 ||
-                        Motorista.getText().toString().length() == 0 ||
-                        KmVeiculo.getText().toString().length() == 0 ||
-                        RadioSaidaretorno.getCheckedRadioButtonId() == -1 ||
-                        RadioTracaoOKNOK.getCheckedRadioButtonId() == -1 ||
-                        RadioRodoarOKNOK.getCheckedRadioButtonId() == -1 ||
-                        RadioCalibragemPneusOKNOK.getCheckedRadioButtonId() == -1 ||
-                        RadioEstepeOKNOK.getCheckedRadioButtonId() == -1 ||
-                        RadioFreioDianteiroOKNOK.getCheckedRadioButtonId() == -1 ||
-                        RadioFreioTraseiroOKNOK.getCheckedRadioButtonId() == -1 ||
-                        RadioAmortecedorOKNOK.getCheckedRadioButtonId() == -1 ||
-                        RadioMolasOKNOK.getCheckedRadioButtonId() == -1 ||
-                        RadioCambioOleoOKNOK.getCheckedRadioButtonId() == -1 ||
-                        RadioDirecaoOleoOKNOK.getCheckedRadioButtonId() == -1 ||
-                        RadioLimpezaRadiadorAguaOKNOK.getCheckedRadioButtonId() == -1 ||
-                        RadioOleoMotorOKNOK.getCheckedRadioButtonId() == -1 ||
-                        RadioRetrovisorOKNOK.getCheckedRadioButtonId() == -1 ||
-                        RadioParaBrisaOKNOK.getCheckedRadioButtonId() == -1 ||
-                        RadioParaChoqueDianteiroOKNOK.getCheckedRadioButtonId() == -1 ||
-                        RadioParaChoqueTraseiroOKNOK.getCheckedRadioButtonId() == -1 ||
-                        RadioestofamentoOKNOK.getCheckedRadioButtonId() == -1 ||
-                        RadiocortinasOKNOK.getCheckedRadioButtonId() == -1 ||
-                        RadiocintoDeSegurancaOKNOK.getCheckedRadioButtonId() == -1 ||
-                        RadiofreioDeEstacionamentoOKNOK.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(CriaCheckListActivity.this, "Erro, responda " +
+                        "todos os campos.", Toast.LENGTH_SHORT).show();
 
-                    Toast.makeText(CriaCheckList.this, "Erro, responda " +
-                            "todos os campos.", Toast.LENGTH_SHORT).show();
-
-                    if (Data.getText().toString().length() == 0) {
-                        Data.setError("Preencha este campo");
-                    }
-                    if (Placa.getText().toString().length() == 0) {
-                        Placa.setError("Preencha este campo");
-                    }
-                    if (Hora.getText().toString().length() == 0) {
-                        Hora.setError("Preencha este campo");
-                    }
-                    if (Motorista.getText().toString().length() == 0) {
-                        Motorista.setError("Preencha este campo");
-                    }
-                    if (KmVeiculo.getText().toString().length() == 0) {
-                        KmVeiculo.setError("Preencha este campo");
-                    }
-                    if (RadioSaidaretorno.getCheckedRadioButtonId() == -1) {
-                        selSaidaRetorno.setError("*");
-                    }
-                    if (RadioTracaoOKNOK.getCheckedRadioButtonId() == -1) {
-                        selTracao.setError("*");
-                    }
-                    if (RadioRodoarOKNOK.getCheckedRadioButtonId() == -1) {
-                        selRodoar.setError("*");
-                    }
-                    if (RadioCalibragemPneusOKNOK.getCheckedRadioButtonId() == -1) {
-                        selCalibragemPneus.setError("*");
-                    }
-                    if (RadioEstepeOKNOK.getCheckedRadioButtonId() == -1) {
-                        selEstepe.setError("*");
-                    }
-                    if (RadioFreioDianteiroOKNOK.getCheckedRadioButtonId() == -1) {
-                        selFreioDianteiro.setError("*");
-                    }
-                    if (RadioFreioTraseiroOKNOK.getCheckedRadioButtonId() == -1) {
-                        selFreioTraseiro.setError("*");
-                    }
-                    if (RadioAmortecedorOKNOK.getCheckedRadioButtonId() == -1) {
-                        selAmortecedor.setError("*");
-                    }
-                    if (RadioMolasOKNOK.getCheckedRadioButtonId() == -1) {
-                        selMolas.setError("*");
-                    }
-                    if (RadioCambioOleoOKNOK.getCheckedRadioButtonId() == -1) {
-                        selCambioOleo.setError("*");
-                    }
-                    if (RadioDirecaoOleoOKNOK.getCheckedRadioButtonId() == -1) {
-                        selDirecaoOleo.setError("*");
-                    }
-                    if (RadioLimpezaRadiadorAguaOKNOK.getCheckedRadioButtonId() == -1) {
-                        selLimpezaRadiadorAgua.setError("*");
-                    }
-                    if (RadioOleoMotorOKNOK.getCheckedRadioButtonId() == -1) {
-                        selOleoMotor.setError("*");
-                    }
-                    if (RadioRetrovisorOKNOK.getCheckedRadioButtonId() == -1) {
-                        selRetrovisor.setError("*");
-                    }
-                    if (RadioParaBrisaOKNOK.getCheckedRadioButtonId() == -1) {
-                        selParaBrisa.setError("*");
-                    }
-                    if (RadioParaChoqueDianteiroOKNOK.getCheckedRadioButtonId() == -1) {
-                        selParaChoqueDianteiro.setError("*");
-                    }
-                    if (RadioParaChoqueTraseiroOKNOK.getCheckedRadioButtonId() == -1) {
-                        selParaChoqueTraseiro.setError("*");
-                    }
-                    if (RadioestofamentoOKNOK.getCheckedRadioButtonId() == -1) {
-                        selEstofamento.setError("*");
-                    }
-                    if (RadiocortinasOKNOK.getCheckedRadioButtonId() == -1) {
-                        selCortinas.setError("*");
-                    }
-                    if (RadiocintoDeSegurancaOKNOK.getCheckedRadioButtonId() == -1) {
-                        selCintoDeSeguranca.setError("*");
-                    }
-                    if (RadiofreioDeEstacionamentoOKNOK.getCheckedRadioButtonId() == -1) {
-                        selFreioDeEstacionamento.setError("*");
-                    }
-                    return;
+                if (Data.getText().toString().length() == 0) {
+                    Data.setError("Preencha este campo");
                 }
-                adicionaCheck();
+                if (Placa.getText().toString().length() == 0) {
+                    Placa.setError("Preencha este campo");
+                }
+                if (Hora.getText().toString().length() == 0) {
+                    Hora.setError("Preencha este campo");
+                }
+                if (Motorista.getText().toString().length() == 0) {
+                    Motorista.setError("Preencha este campo");
+                }
+                if (KmVeiculo.getText().toString().length() == 0) {
+                    KmVeiculo.setError("Preencha este campo");
+                }
+                if (RadioSaidaretorno.getCheckedRadioButtonId() == -1) {
+                    selSaidaRetorno.setError("*");
+                }
+                if (RadioTracaoOKNOK.getCheckedRadioButtonId() == -1) {
+                    selTracao.setError("*");
+                }
+                if (RadioRodoarOKNOK.getCheckedRadioButtonId() == -1) {
+                    selRodoar.setError("*");
+                }
+                if (RadioCalibragemPneusOKNOK.getCheckedRadioButtonId() == -1) {
+                    selCalibragemPneus.setError("*");
+                }
+                if (RadioEstepeOKNOK.getCheckedRadioButtonId() == -1) {
+                    selEstepe.setError("*");
+                }
+                if (RadioFreioDianteiroOKNOK.getCheckedRadioButtonId() == -1) {
+                    selFreioDianteiro.setError("*");
+                }
+                if (RadioFreioTraseiroOKNOK.getCheckedRadioButtonId() == -1) {
+                    selFreioTraseiro.setError("*");
+                }
+                if (RadioAmortecedorOKNOK.getCheckedRadioButtonId() == -1) {
+                    selAmortecedor.setError("*");
+                }
+                if (RadioMolasOKNOK.getCheckedRadioButtonId() == -1) {
+                    selMolas.setError("*");
+                }
+                if (RadioCambioOleoOKNOK.getCheckedRadioButtonId() == -1) {
+                    selCambioOleo.setError("*");
+                }
+                if (RadioDirecaoOleoOKNOK.getCheckedRadioButtonId() == -1) {
+                    selDirecaoOleo.setError("*");
+                }
+                if (RadioLimpezaRadiadorAguaOKNOK.getCheckedRadioButtonId() == -1) {
+                    selLimpezaRadiadorAgua.setError("*");
+                }
+                if (RadioOleoMotorOKNOK.getCheckedRadioButtonId() == -1) {
+                    selOleoMotor.setError("*");
+                }
+                if (RadioRetrovisorOKNOK.getCheckedRadioButtonId() == -1) {
+                    selRetrovisor.setError("*");
+                }
+                if (RadioParaBrisaOKNOK.getCheckedRadioButtonId() == -1) {
+                    selParaBrisa.setError("*");
+                }
+                if (RadioParaChoqueDianteiroOKNOK.getCheckedRadioButtonId() == -1) {
+                    selParaChoqueDianteiro.setError("*");
+                }
+                if (RadioParaChoqueTraseiroOKNOK.getCheckedRadioButtonId() == -1) {
+                    selParaChoqueTraseiro.setError("*");
+                }
+                if (RadioestofamentoOKNOK.getCheckedRadioButtonId() == -1) {
+                    selEstofamento.setError("*");
+                }
+                if (RadiocortinasOKNOK.getCheckedRadioButtonId() == -1) {
+                    selCortinas.setError("*");
+                }
+                if (RadiocintoDeSegurancaOKNOK.getCheckedRadioButtonId() == -1) {
+                    selCintoDeSeguranca.setError("*");
+                }
+                if (RadiofreioDeEstacionamentoOKNOK.getCheckedRadioButtonId() == -1) {
+                    selFreioDeEstacionamento.setError("*");
+                }
+                return;
             }
+            adicionaCheck();
         });
     }
 
