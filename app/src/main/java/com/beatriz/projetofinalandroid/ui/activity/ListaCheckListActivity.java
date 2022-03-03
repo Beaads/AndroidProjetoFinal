@@ -11,10 +11,10 @@ import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.beatriz.projetofinalandroid.R;
-import com.beatriz.projetofinalandroid.Service.CheckListService;
+import com.beatriz.projetofinalandroid.service.CheckListService;
 import com.beatriz.projetofinalandroid.model.CheckList;
 import com.beatriz.projetofinalandroid.retrofit.RestClient;
-import com.beatriz.projetofinalandroid.ui.recyclerview.adapter.Adapter;
+import com.beatriz.projetofinalandroid.ui.recyclerview.adapter.ChecklistAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
@@ -26,13 +26,13 @@ import rx.schedulers.Schedulers;
 import rx.subscriptions.CompositeSubscription;
 
 public class ListaCheckListActivity extends AppCompatActivity {
-    private Adapter adapter;
+    private ChecklistAdapter checklistAdapter;
     private CompositeSubscription subscription = new CompositeSubscription();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.lista_checklist);
+        setContentView(R.layout.activity_lista_checklist);
         setTitle("CheckLists");
         getTodosCheckList();
         configuraBotaoNovoChecklist();
@@ -41,7 +41,7 @@ public class ListaCheckListActivity extends AppCompatActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
-        setContentView(R.layout.lista_checklist);
+        setContentView(R.layout.activity_lista_checklist);
         getTodosCheckList();
         configuraBotaoNovoChecklist();
     }
@@ -66,7 +66,7 @@ public class ListaCheckListActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                adapter.getFilter().filter(newText);
+                checklistAdapter.getFilter().filter(newText);
                 return false;
             }
         });
@@ -115,9 +115,9 @@ public class ListaCheckListActivity extends AppCompatActivity {
     }
 
     private void configuraAdapter(List<CheckList> todosCheck, RecyclerView recyclerView) {
-        adapter = new Adapter(this, todosCheck);
-        recyclerView.setAdapter(adapter);
-        adapter.setOnItemClickListener((checkList, position) -> {
+        checklistAdapter = new ChecklistAdapter(this, todosCheck);
+        recyclerView.setAdapter(checklistAdapter);
+        checklistAdapter.setOnItemClickListener((checkList, position) -> {
             Intent checklistActivity = new Intent(ListaCheckListActivity.this,
                     CriaCheckListActivity.class);
             checklistActivity.putExtra("checklist", checkList);

@@ -15,7 +15,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tela_login);
+        setContentView(R.layout.activity_tela_login);
         configuraBotaoEntrarNaLista();
         setTitle("Prolog App");
     }
@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
-        setContentView(R.layout.tela_login);
+        setContentView(R.layout.activity_tela_login);
         configuraBotaoEntrarNaLista();
     }
 

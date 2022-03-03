@@ -18,13 +18,13 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> implements Filterable {
+public class ChecklistAdapter extends RecyclerView.Adapter<ChecklistAdapter.CheckListViewHolder> implements Filterable {
     private final List<CheckList> checkLists;
     private final Context context;
     private OnItemClickListener onItemClickListener;
-    List<CheckList> checkListAll;
+    private List<CheckList> checkListAll;
 
-    public Adapter(Context context, List<CheckList> checkLists) {
+    public ChecklistAdapter(Context context, List<CheckList> checkLists) {
         this.context = context;
         this.checkLists = checkLists;
         this.checkListAll = new ArrayList<>(checkLists);
@@ -34,7 +34,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> i
         this.onItemClickListener = onItemClickListener;
     }
 
-    public Adapter.CheckListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ChecklistAdapter.CheckListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View viewCriada = LayoutInflater.from(context)
                 .inflate(R.layout.item_checklist, parent, false);
         return new CheckListViewHolder(viewCriada);
@@ -58,7 +58,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> i
     }
 
     Filter filter = new Filter() {
-
         @Override
         protected FilterResults performFiltering(CharSequence charSequence) {
             ArrayList<CheckList> filteredList = new ArrayList<>();
@@ -91,7 +90,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> i
     };
 
     class CheckListViewHolder extends RecyclerView.ViewHolder {
-
         private final TextView data;
         private final TextView hora;
         private final TextView saidaRetorno;
@@ -109,17 +107,15 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> i
             motorista = itemView.findViewById(R.id.item_checklist_motorista);
             kmVeiculo = itemView.findViewById(R.id.item_checklist_kmVeiculo);
 
-            itemView.setOnClickListener((view) -> {
-                onItemClickListener.onItemClick(checkList, getAdapterPosition());
-            });
+            itemView.setOnClickListener((view) -> onItemClickListener.onItemClick(checkList, getAdapterPosition()));
         }
 
         public void vincula(CheckList checkList) {
             this.checkList = checkList;
-            preencheCampo(checkList);
+            preencheCampo();
         }
 
-        private void preencheCampo(CheckList checkList) {
+        private void preencheCampo() {
             data.setText(checkList.getData());
             hora.setText(checkList.getHora());
             saidaRetorno.setText(checkList.getSaidaRetorno());

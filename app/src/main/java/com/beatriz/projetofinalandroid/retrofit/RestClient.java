@@ -1,6 +1,6 @@
 package com.beatriz.projetofinalandroid.retrofit;
 
-import com.beatriz.projetofinalandroid.Service.CheckListService;
+import com.beatriz.projetofinalandroid.service.CheckListService;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;

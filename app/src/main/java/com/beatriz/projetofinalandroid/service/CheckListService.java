@@ -1,4 +1,4 @@
-package com.beatriz.projetofinalandroid.Service;
+package com.beatriz.projetofinalandroid.service;
 
 import com.beatriz.projetofinalandroid.model.CheckList;
 
