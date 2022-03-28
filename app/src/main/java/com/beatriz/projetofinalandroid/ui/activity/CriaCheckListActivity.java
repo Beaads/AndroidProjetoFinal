@@ -14,18 +14,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.beatriz.projetofinalandroid.R;
-import com.beatriz.projetofinalandroid.Service.CheckListService;
+import com.beatriz.projetofinalandroid.service.CheckListService;
 import com.beatriz.projetofinalandroid.model.CheckList;
 import com.beatriz.projetofinalandroid.retrofit.RestClient;
+
+import java.text.BreakIterator;
 
 import rx.Observable;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class CriaCheckList extends AppCompatActivity {
+public class CriaCheckListActivity extends AppCompatActivity {
 
-    RestClient restClient = new RestClient();
     public CheckList check = new CheckList();
 
     Button btnSalvar;
@@ -283,7 +284,7 @@ public class CriaCheckList extends AppCompatActivity {
 
     public void adicionaCheck() {
         CheckList checkListCriado = criaCheckList();
-        Observable<CheckList> observable = restClient.getRetrofit()
+        Observable<CheckList> observable = RestClient.getRetrofit()
                 .create(CheckListService.class).salva(checkListCriado);
         observable
                 .subscribeOn(Schedulers.io())
@@ -296,7 +297,7 @@ public class CriaCheckList extends AppCompatActivity {
 
                     @Override
                     public void onError(Throwable e) {
-                        Toast.makeText(CriaCheckList.this, "Erro ao criar " +
+                        Toast.makeText(CriaCheckListActivity.this, "Erro ao criar " +
                                 e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
 
@@ -410,7 +411,7 @@ public class CriaCheckList extends AppCompatActivity {
                         RadiocintoDeSegurancaOKNOK.getCheckedRadioButtonId() == -1 ||
                         RadiofreioDeEstacionamentoOKNOK.getCheckedRadioButtonId() == -1) {
 
-                    Toast.makeText(CriaCheckList.this, "Erro, responda " +
+                    Toast.makeText(CriaCheckListActivity.this, "Erro, responda " +
                             "todos os campos.", Toast.LENGTH_SHORT).show();
 
                     if (Data.getText().toString().length() == 0) {

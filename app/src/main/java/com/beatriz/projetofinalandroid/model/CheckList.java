@@ -1,9 +1,13 @@
 package com.beatriz.projetofinalandroid.model;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.Serializable;
 
 public class CheckList implements Serializable {
 
+    @NotNull
+    private int id;
     private String data;
     private String hora;
     private String saidaRetorno;
@@ -39,7 +43,6 @@ public class CheckList implements Serializable {
                      String retrovisor, String paraBrisa, String paraChoqueDianteiro,
                      String paraChoqueTraseiro, String estofamento, String cortinas,
                      String cintoDeSeguranca, String freioDeEstacionamento) {
-
         this.data = data;
         this.hora = hora;
         this.saidaRetorno = saidaRetorno;
@@ -69,6 +72,10 @@ public class CheckList implements Serializable {
     }
 
     public CheckList() {
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getData() {
@@ -174,7 +181,7 @@ public class CheckList implements Serializable {
     public String getFreioDeEstacionamento() {
         return freioDeEstacionamento;
     }
-}
 
+}
 
 

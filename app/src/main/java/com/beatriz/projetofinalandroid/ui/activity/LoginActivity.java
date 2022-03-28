@@ -11,15 +11,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.beatriz.projetofinalandroid.R;
 
-public class Login extends AppCompatActivity {
-
-    Button btnEntrar;
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_login);
-        BotaoEntraNaLista();
+        configuraBotaoEntrarNaLista();
         setTitle("Prolog App");
     }
 
@@ -27,11 +25,11 @@ public class Login extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
         setContentView(R.layout.tela_login);
-        BotaoEntraNaLista();
+        configuraBotaoEntrarNaLista();
     }
 
-    private void BotaoEntraNaLista() {
-        btnEntrar = findViewById(R.id.btnEntrar);
+    private void configuraBotaoEntrarNaLista() {
+        Button btnEntrar = findViewById(R.id.btnEntrar);
         EditText Login = findViewById(R.id.Login);
         EditText Senha = findViewById(R.id.Senha);
 
@@ -44,7 +42,7 @@ public class Login extends AppCompatActivity {
                 if (Login.getText().toString().length() == 0 && Senha.getText().toString().length() == 0) {
                     selLogin.setError("*");
                     selSenha.setError("*");
-                    Toast.makeText(Login.this, "Preencha as informações",
+                    Toast.makeText(LoginActivity.this, "Preencha as informações",
                             Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -54,7 +52,7 @@ public class Login extends AppCompatActivity {
                 } else {
                     selLogin.setError("*");
                     selSenha.setError("*");
-                    Toast.makeText(Login.this, "Login e/ou senha incorretos",
+                    Toast.makeText(LoginActivity.this, "Login e/ou senha incorretos",
                             Toast.LENGTH_SHORT).show();
                 }
             }
@@ -63,8 +61,8 @@ public class Login extends AppCompatActivity {
 
     private void vaiParaListaCheckList() {
         Intent iniciaListaCheckList =
-                new Intent(Login.this,
-                        ListaCheckList.class);
+                new Intent(LoginActivity.this,
+                        ListaCheckListActivity.class);
         startActivityIfNeeded(iniciaListaCheckList, 2);
     }
 }

@@ -1,9 +1,12 @@
 package com.beatriz.projetofinalandroid.ui.recyclerview.adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
@@ -18,13 +21,13 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> implements Filterable {
+public class CheckListAdapter extends RecyclerView.Adapter<CheckListAdapter.CheckListViewHolder> implements Filterable {
     private final List<CheckList> checkLists;
     private final Context context;
     private OnItemClickListener onItemClickListener;
-    List<CheckList> checkListAll;
+    private List<CheckList> checkListAll;
 
-    public Adapter(Context context, List<CheckList> checkLists) {
+    public CheckListAdapter(Context context, List<CheckList> checkLists) {
         this.context = context;
         this.checkLists = checkLists;
         this.checkListAll = new ArrayList<>(checkLists);
@@ -34,7 +37,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> i
         this.onItemClickListener = onItemClickListener;
     }
 
-    public Adapter.CheckListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public CheckListAdapter.CheckListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View viewCriada = LayoutInflater.from(context)
                 .inflate(R.layout.item_checklist, parent, false);
         return new CheckListViewHolder(viewCriada);
@@ -49,6 +52,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> i
     @Override
     public int getItemCount() {
         return checkLists.size();
+    }
+
+    public CheckList getItem(int posicao) {
+        return checkLists.get(posicao);
     }
 
 
@@ -88,6 +95,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CheckListViewHolder> i
             checkLists.addAll((Collection<? extends CheckList>) filterResults.values);
             notifyDataSetChanged();
         }
+
     };
 
     class CheckListViewHolder extends RecyclerView.ViewHolder {
