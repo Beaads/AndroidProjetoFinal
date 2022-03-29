@@ -16,8 +16,9 @@
         <entry key="app/src/main/res/layout-land/item_checklist.xml" value="0.30335097001763667" />
         <entry key="app/src/main/res/layout-land/tela_login.xml" value="0.1693121693121693" />
         <entry key="app/src/main/res/layout/activity_check_list.xml" value="0.296195652173913" />
+        <entry key="app/src/main/res/layout/activity_lista_checklist.xml" value="0.23697916666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/cria_checklist.xml" value="0.35833333333333334" />
+        <entry key="app/src/main/res/layout/cria_checklist.xml" value="0.22635933806146571" />
         <entry key="app/src/main/res/layout/item_checklist.xml" value="0.48656294200848654" />
         <entry key="app/src/main/res/layout/item_freios.xml" value="0.296195652173913" />
         <entry key="app/src/main/res/layout/lista_checklist.xml" value="0.2" />
@@ -26,8 +27,10 @@
         <entry key="app/src/main/res/layout/tela_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout/teste.xml" value="0.2" />
         <entry key="app/src/main/res/menu/lista_menu.xml" value="0.22" />
+        <entry key="app/src/main/res/menu/lista_menu_buscar.xml" value="0.23697916666666666" />
         <entry key="app/src/main/res/menu/menu_checklist_salva.xml" value="0.35833333333333334" />
         <entry key="app/src/main/res/menu/menu_formulario_funcionario_salva.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/menu_remover.xml" value="0.2" />
       </map>
     </option>
   </component>

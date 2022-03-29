@@ -154,7 +154,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/iconn" />
 
-
         <TextView
             android:id="@+id/item_checklist_data"
             android:layout_width="295dp"

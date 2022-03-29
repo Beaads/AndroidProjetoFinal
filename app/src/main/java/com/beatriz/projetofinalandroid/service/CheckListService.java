@@ -22,6 +22,5 @@ public interface CheckListService {
     Observable<CheckList> salva(@Body CheckList checkList);
 
     @DELETE("checklist/{id}")
-    Observable<CheckList> delete(@Path("id") int id);
-
+    Observable<Void> delete(@Path("id") int id);
 }

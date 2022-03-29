@@ -1,5 +1,7 @@
 package com.beatriz.projetofinalandroid.ui.activity;
 
+import static com.beatriz.projetofinalandroid.ui.activity.ConstantesActivity.CHAVE_CHECKLIST;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +18,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tela_login);
+        setContentView(R.layout.activity_tela_login);
         configuraBotaoEntrarNaLista();
         setTitle("Prolog App");
     }
@@ -24,34 +26,32 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
-        setContentView(R.layout.tela_login);
+        setContentView(R.layout.activity_tela_login);
         configuraBotaoEntrarNaLista();
     }
 
     private void configuraBotaoEntrarNaLista() {
         Button btnEntrar = findViewById(R.id.btnEntrar);
-        EditText Login = findViewById(R.id.Login);
-        EditText Senha = findViewById(R.id.Senha);
+        EditText login = findViewById(R.id.Login);
+        EditText senha = findViewById(R.id.Senha);
 
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText selLogin = findViewById(R.id.Login);
-                EditText selSenha = findViewById(R.id.Senha);
 
-                if (Login.getText().toString().length() == 0 && Senha.getText().toString().length() == 0) {
-                    selLogin.setError("*");
-                    selSenha.setError("*");
+                if (login.getText().toString().length() == 0 && senha.getText().toString().length() == 0) {
+                    login.setError("*");
+                    senha.setError("*");
                     Toast.makeText(LoginActivity.this, "Preencha as informações",
                             Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (Login.getText().toString().equals("prolog") && Senha.getText().toString().equals("1234")) {
+                if (login.getText().toString().equals("prolog") && senha.getText().toString().equals("1234")) {
                     vaiParaListaCheckList();
                 } else {
-                    selLogin.setError("*");
-                    selSenha.setError("*");
+                    login.setError("*");
+                    senha.setError("*");
                     Toast.makeText(LoginActivity.this, "Login e/ou senha incorretos",
                             Toast.LENGTH_SHORT).show();
                 }
@@ -63,6 +63,6 @@ public class LoginActivity extends AppCompatActivity {
         Intent iniciaListaCheckList =
                 new Intent(LoginActivity.this,
                         ListaCheckListActivity.class);
-        startActivityIfNeeded(iniciaListaCheckList, 2);
+        startActivityIfNeeded(iniciaListaCheckList, CHAVE_CHECKLIST);
     }
 }

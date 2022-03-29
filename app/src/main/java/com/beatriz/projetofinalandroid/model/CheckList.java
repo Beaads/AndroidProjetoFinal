@@ -181,7 +181,6 @@ public class CheckList implements Serializable {
     public String getFreioDeEstacionamento() {
         return freioDeEstacionamento;
     }
-
 }
 
 

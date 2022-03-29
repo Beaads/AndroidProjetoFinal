@@ -24,7 +24,6 @@ public final class RestClient {
                     .client(okHttpClient)
                     .build();
         }
-
         return RETROFIT;
     }
 }

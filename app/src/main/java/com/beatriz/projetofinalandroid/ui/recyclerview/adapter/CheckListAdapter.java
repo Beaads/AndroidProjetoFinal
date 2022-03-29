@@ -1,12 +1,9 @@
 package com.beatriz.projetofinalandroid.ui.recyclerview.adapter;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
@@ -54,11 +51,6 @@ public class CheckListAdapter extends RecyclerView.Adapter<CheckListAdapter.Chec
         return checkLists.size();
     }
 
-    public CheckList getItem(int posicao) {
-        return checkLists.get(posicao);
-    }
-
-
     @Override
     public Filter getFilter() {
         return filter;
@@ -83,7 +75,6 @@ public class CheckListAdapter extends RecyclerView.Adapter<CheckListAdapter.Chec
                     }
                 }
             }
-
             FilterResults filterResults = new FilterResults();
             filterResults.values = filteredList;
             return filterResults;
@@ -95,10 +86,9 @@ public class CheckListAdapter extends RecyclerView.Adapter<CheckListAdapter.Chec
             checkLists.addAll((Collection<? extends CheckList>) filterResults.values);
             notifyDataSetChanged();
         }
-
     };
 
-    class CheckListViewHolder extends RecyclerView.ViewHolder {
+    public class CheckListViewHolder extends RecyclerView.ViewHolder {
 
         private final TextView data;
         private final TextView hora;
@@ -137,3 +127,4 @@ public class CheckListAdapter extends RecyclerView.Adapter<CheckListAdapter.Chec
         }
     }
 }
+
