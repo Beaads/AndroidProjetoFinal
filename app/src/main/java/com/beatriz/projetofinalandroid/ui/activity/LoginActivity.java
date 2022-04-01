@@ -12,6 +12,19 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.beatriz.projetofinalandroid.R;
+import com.beatriz.projetofinalandroid.model.CheckList;
+import com.beatriz.projetofinalandroid.model.Usuario;
+import com.beatriz.projetofinalandroid.retrofit.RestClient;
+import com.beatriz.projetofinalandroid.service.CheckListService;
+import com.beatriz.projetofinalandroid.service.UsuarioService;
+
+import java.util.List;
+
+import retrofit2.http.Query;
+import rx.Observable;
+import rx.Observer;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -28,6 +41,29 @@ public class LoginActivity extends AppCompatActivity {
         super.onRestart();
         setContentView(R.layout.activity_tela_login);
         configuraBotaoEntrarNaLista();
+    }
+
+    public void getUsuarios() {
+        Observable<List<Usuario>> observable = RestClient.getRetrofit().create
+                (UsuarioService.class).getUsuarios();
+        observable
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<List<Usuario>>() {
+                    @Override
+                    public void onCompleted() {
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Toast.makeText(LoginActivity.this, "Erro: " +
+                                e.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onNext(List<Usuario> checkLists) {
+                    }
+                });
     }
 
     private void configuraBotaoEntrarNaLista() {
