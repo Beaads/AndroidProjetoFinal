@@ -2,6 +2,7 @@ package com.beatriz.projetofinalandroid.ui.activity;
 
 import static com.beatriz.projetofinalandroid.ui.activity.ConstantesActivity.CHAVE_CHECKLIST;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,18 +10,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.beatriz.projetofinalandroid.R;
-import com.beatriz.projetofinalandroid.model.CheckList;
 import com.beatriz.projetofinalandroid.model.Usuario;
 import com.beatriz.projetofinalandroid.retrofit.RestClient;
-import com.beatriz.projetofinalandroid.service.CheckListService;
 import com.beatriz.projetofinalandroid.service.UsuarioService;
 
 import java.util.List;
 
-import retrofit2.http.Query;
 import rx.Observable;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
@@ -28,12 +27,21 @@ import rx.schedulers.Schedulers;
 
 public class LoginActivity extends AppCompatActivity {
 
+    Usuario usu = new Usuario();
+    Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_login);
         configuraBotaoEntrarNaLista();
         setTitle("Prolog App");
+        context = this;
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(newBase);
     }
 
     @Override
@@ -43,9 +51,10 @@ public class LoginActivity extends AppCompatActivity {
         configuraBotaoEntrarNaLista();
     }
 
-    public void getUsuarios() {
-        Observable<List<Usuario>> observable = RestClient.getRetrofit().create
-                (UsuarioService.class).getUsuarios();
+    public CharSequence getUsuarios(String usuario) {
+//        Usuario usuarioDoBanco = criaUsuarioeSenha();
+        Observable <List<Usuario>> observable = RestClient.getRetrofit().create
+                (UsuarioService.class).getUsu();
         observable
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -61,32 +70,45 @@ public class LoginActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onNext(List<Usuario> checkLists) {
+                    public void onNext(List<Usuario> usuarios) {
+
                     }
+
                 });
+        return null;
     }
 
+
     private void configuraBotaoEntrarNaLista() {
-        Button btnEntrar = findViewById(R.id.btnEntrar);
-        EditText login = findViewById(R.id.Login);
+        EditText usuario = findViewById(R.id.Login);
         EditText senha = findViewById(R.id.Senha);
+
+        Button btnEntrar = findViewById(R.id.btnEntrar);
 
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (login.getText().toString().length() == 0 && senha.getText().toString().length() == 0) {
-                    login.setError("*");
+                if (usuario.getText().toString().length() == 0 && senha.getText().toString().length() == 0) {
+                    usuario.setError("*");
                     senha.setError("*");
                     Toast.makeText(LoginActivity.this, "Preencha as informações",
                             Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (login.getText().toString().equals("prolog") && senha.getText().toString().equals("1234")) {
+//                if (login.getText().toString().equals("prolog") && senha.getText().toString().equals("1234")) {
+//                    vaiParaListaCheckList();
+//                } else {
+//                    login.setError("*");
+//                    senha.setError("*");
+//                    Toast.makeText(LoginActivity.this, "Login e/ou senha incorretos",
+//                            Toast.LENGTH_SHORT).show();
+//                }
+                if(usuario.getText().toString().equals(getUsuarios(usu.getUsuario())) && senha.getText().toString().equals(getUsuarios(usu.getSenha()))) {
                     vaiParaListaCheckList();
                 } else {
-                    login.setError("*");
+                    usuario.setError("*");
                     senha.setError("*");
                     Toast.makeText(LoginActivity.this, "Login e/ou senha incorretos",
                             Toast.LENGTH_SHORT).show();

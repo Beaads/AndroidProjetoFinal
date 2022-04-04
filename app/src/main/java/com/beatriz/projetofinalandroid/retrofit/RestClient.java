@@ -1,6 +1,7 @@
 package com.beatriz.projetofinalandroid.retrofit;
 
 import com.beatriz.projetofinalandroid.service.CheckListService;
+import com.beatriz.projetofinalandroid.service.UsuarioService;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -19,6 +20,7 @@ public final class RestClient {
                     .build();
             RETROFIT = new Retrofit.Builder()
                     .baseUrl(CheckListService.BASE_URL)
+                    .baseUrl(UsuarioService.BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                     .client(okHttpClient)

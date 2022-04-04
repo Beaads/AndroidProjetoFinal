@@ -11,5 +11,5 @@ public interface UsuarioService {
     public static final String BASE_URL = "http://192.168.0.55:8080/";
 
     @GET("usuario/")
-    Observable<List<Usuario>> getUsuarios();
+    Observable<List<Usuario>> getUsu();
 }

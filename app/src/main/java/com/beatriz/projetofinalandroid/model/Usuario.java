@@ -10,14 +10,15 @@ public class Usuario implements Serializable {
     private String usuario;
     private String senha;
 
-    public Usuario(int id, String usuario, String senha) {
+    public Usuario() {
         this.id = id;
         this.usuario = usuario;
         this.senha = senha;
     }
 
-    public int getIdUsuario() {
-        return id;
+    public Usuario(String usuario, String senha) {
+        this.usuario = usuario;
+        this.senha = senha;
     }
 
     public String getUsuario() {
