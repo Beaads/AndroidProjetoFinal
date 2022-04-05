@@ -23,5 +23,4 @@ public interface CheckListService {
 
     @DELETE("checklist/{id}")
     Observable<Void> delete(@Path("id") int id);
-
 }

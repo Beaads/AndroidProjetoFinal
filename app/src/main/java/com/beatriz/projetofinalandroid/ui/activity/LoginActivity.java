@@ -10,15 +10,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.beatriz.projetofinalandroid.R;
 import com.beatriz.projetofinalandroid.model.Usuario;
 import com.beatriz.projetofinalandroid.retrofit.RestClient;
 import com.beatriz.projetofinalandroid.service.UsuarioService;
-
-import java.util.List;
 
 import rx.Observable;
 import rx.Observer;
@@ -51,14 +48,14 @@ public class LoginActivity extends AppCompatActivity {
         configuraBotaoEntrarNaLista();
     }
 
-    public CharSequence getUsuarios(String usuario) {
+    public CharSequence getUsuarios(Integer id, Usuario usuario) {
 //        Usuario usuarioDoBanco = criaUsuarioeSenha();
-        Observable <List<Usuario>> observable = RestClient.getRetrofit().create
-                (UsuarioService.class).getUsu();
+        Observable <Usuario> observable = RestClient.getRetrofit().create
+                (UsuarioService.class).getUsu(id, usuario);
         observable
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<List<Usuario>>() {
+                .subscribe(new Observer<Usuario>() {
                     @Override
                     public void onCompleted() {
                     }
@@ -70,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onNext(List<Usuario> usuarios) {
+                    public void onNext(Usuario usuario) {
 
                     }
 
@@ -105,7 +102,7 @@ public class LoginActivity extends AppCompatActivity {
 //                    Toast.makeText(LoginActivity.this, "Login e/ou senha incorretos",
 //                            Toast.LENGTH_SHORT).show();
 //                }
-                if(usuario.getText().toString().equals(getUsuarios(usu.getUsuario())) && senha.getText().toString().equals(getUsuarios(usu.getSenha()))) {
+                if(usuario.getText().toString().equals(getUsuarios(usu.getUsuario())) && senha.getText().toString().equals(usu.getSenha())) {
                     vaiParaListaCheckList();
                 } else {
                     usuario.setError("*");
