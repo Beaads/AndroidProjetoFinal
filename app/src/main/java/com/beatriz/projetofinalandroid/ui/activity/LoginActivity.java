@@ -13,18 +13,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.beatriz.projetofinalandroid.R;
-import com.beatriz.projetofinalandroid.model.Usuario;
-import com.beatriz.projetofinalandroid.retrofit.RestClient;
-import com.beatriz.projetofinalandroid.service.UsuarioService;
-
-import rx.Observable;
-import rx.Observer;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Usuario usu = new Usuario();
     Context context;
 
     @Override
@@ -37,44 +28,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(newBase);
-    }
-
-    @Override
     protected void onRestart() {
         super.onRestart();
         setContentView(R.layout.activity_tela_login);
         configuraBotaoEntrarNaLista();
     }
-
-    public CharSequence getUsuarios(Integer id, Usuario usuario) {
-//        Usuario usuarioDoBanco = criaUsuarioeSenha();
-        Observable <Usuario> observable = RestClient.getRetrofit().create
-                (UsuarioService.class).getUsu(id, usuario);
-        observable
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<Usuario>() {
-                    @Override
-                    public void onCompleted() {
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        Toast.makeText(LoginActivity.this, "Erro: " +
-                                e.getMessage(), Toast.LENGTH_LONG).show();
-                    }
-
-                    @Override
-                    public void onNext(Usuario usuario) {
-
-                    }
-
-                });
-        return null;
-    }
-
 
     private void configuraBotaoEntrarNaLista() {
         EditText usuario = findViewById(R.id.Login);
@@ -94,15 +52,7 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
 
-//                if (login.getText().toString().equals("prolog") && senha.getText().toString().equals("1234")) {
-//                    vaiParaListaCheckList();
-//                } else {
-//                    login.setError("*");
-//                    senha.setError("*");
-//                    Toast.makeText(LoginActivity.this, "Login e/ou senha incorretos",
-//                            Toast.LENGTH_SHORT).show();
-//                }
-                if(usuario.getText().toString().equals(getUsuarios(usu.getUsuario())) && senha.getText().toString().equals(usu.getSenha())) {
+                if (usuario.getText().toString().equals("prolog") && senha.getText().toString().equals("1234")) {
                     vaiParaListaCheckList();
                 } else {
                     usuario.setError("*");
